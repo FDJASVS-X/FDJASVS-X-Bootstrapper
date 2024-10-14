@@ -1,0 +1,155 @@
+﻿<Page x:Class="FDJASVS_X_Bootstrapper.Settings"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FDJASVS_X_Bootstrapper"
+      mc:Ignorable="d" 
+      d:DesignHeight="345" d:DesignWidth="460"
+ Title="Settings" Height="345" Width="460" Background="Blue">
+
+    <Grid>
+        <ScrollViewer HorizontalAlignment="Left" Width="439" Margin="0,0,0,40" >
+
+            <StackPanel Height="350">
+                <ToggleButton Content="X" Height="56" FontFamily="Helvetica" FontSize="48" Background="Red" Foreground="White" FontWeight="Light" Width="66" BorderBrush="Black" Checked="ToggleButton_Checked" RenderTransformOrigin="0.5,0.5" Panel.ZIndex="21">
+                    <ToggleButton.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform X="-180"/>
+                        </TransformGroup>
+                    </ToggleButton.RenderTransform>
+                </ToggleButton>
+
+
+                <CheckBox x:Name="RPCheckBox" Content="" RenderTransformOrigin="1,1" Width="16" IsChecked="False" Checked="RPCBox_Checked" Unchecked="RPCBox_Unchecked" ToolTip="Thanks pizzaboxer For This Feature ;)">
+                    <CheckBox.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleY="2" ScaleX="2"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform X="-162" Y="37.549"/>
+                        </TransformGroup>
+                    </CheckBox.RenderTransform>
+                </CheckBox>
+                <TextBlock Text="Discord RPC" Width="350" Height="29" FontFamily="Helvetica"  Foreground="White" FontWeight="Light" FontSize="24" RenderTransformOrigin="0.5,0.5"   >
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform Y="10" X="30"/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform></TextBlock>
+
+                <CheckBox x:Name="MultInstanceCheckBox" Content="" RenderTransformOrigin="1,1" Width="16" IsChecked="False" Checked="Multi_Checked" Unchecked="Multi_Unchecked">
+                    <CheckBox.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleY="2" ScaleX="2"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform X="-162" Y="37.549"/>
+                        </TransformGroup>
+                    </CheckBox.RenderTransform>
+                </CheckBox>
+                <TextBlock Text="Multi-Instance Launching" Width="350" Height="29" FontFamily="Helvetica"  Foreground="White" FontWeight="Light" FontSize="24" RenderTransformOrigin="0.5,0.5"   >
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform Y="10" X="30"/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform></TextBlock>
+
+                <CheckBox x:Name="OldDeathCheckBox" Content="" RenderTransformOrigin="1,1" Width="16" IsChecked="False" Checked="OldDeath_Checked" Unchecked="OldDeath_Unchecked">
+                    <CheckBox.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleY="2" ScaleX="2"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform X="-162" Y="37.549"/>
+                        </TransformGroup>
+                    </CheckBox.RenderTransform>
+                </CheckBox>
+                <TextBlock Text="Use Old Death Sound" Width="350" Height="29" FontFamily="Helvetica"  Foreground="White" FontWeight="Light" FontSize="24" RenderTransformOrigin="0.5,0.5"   >
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform Y="10" X="30"/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform></TextBlock>
+
+                <CheckBox x:Name="OldAvatarModelSwapCheckBox" Content="" RenderTransformOrigin="0.5,0.5" Width="16" IsChecked="False" Checked="Swap_Checked" Unchecked="Swap_Unchecked">
+                    <CheckBox.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleY="2" ScaleX="2"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform X="-170" Y="30"/>
+                        </TransformGroup>
+                    </CheckBox.RenderTransform>
+                </CheckBox>
+                <TextBlock Text="Use Old Avatar Editor Background" Width="350" Height="29" FontFamily="Helvetica"  Foreground="White" FontWeight="Light" FontSize="22" RenderTransformOrigin="0.5,0.5"   >
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform Y="10" X="30"/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform></TextBlock>
+
+
+                
+
+                <CheckBox x:Name="AutoUpdateCheckBox" Content="" RenderTransformOrigin="0.5,0.5" Width="16" IsChecked="False" Checked="AutoUpdate_Checked" Unchecked="AutoUpdate_Unchecked">
+                    <CheckBox.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleY="2" ScaleX="2"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform X="-170" Y="30"/>
+                        </TransformGroup>
+                    </CheckBox.RenderTransform>
+                </CheckBox>
+                <TextBlock Text="Automatically Update FDJASVS X Bootstrapper" Width="350" Height="27" FontFamily="Helvetica"  Foreground="White" FontWeight="Light" FontSize="16" RenderTransformOrigin="0.5,0.5"   >
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform Y="10" X="30"/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform></TextBlock>
+
+                <CheckBox x:Name="LiveCheckBox" Content="" RenderTransformOrigin="0.5,0.5" Width="16" IsChecked="False" Checked="Live_Checked" Unchecked="Live_Unchecked">
+                    <CheckBox.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleY="2" ScaleX="2"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform X="-170" Y="30"/>
+                        </TransformGroup>
+                    </CheckBox.RenderTransform>
+                </CheckBox>
+                <TextBlock Text="Channel LIVE" Width="350" Height="27" FontFamily="Helvetica"  Foreground="White" FontWeight="Light" FontSize="22" RenderTransformOrigin="0.5,0.5"   >
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform Y="10" X="30"/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform></TextBlock>
+
+
+            </StackPanel>
+        </ScrollViewer>
+
+    </Grid>
+</Page>
