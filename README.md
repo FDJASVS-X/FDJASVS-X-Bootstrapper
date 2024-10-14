@@ -64,3 +64,8 @@ At the end of Summer, Emerald finally Found Time To Help Me With FDJASVS X Boots
 Introducing...
 
 ![Logo](Images/FDXBLogo.png)
+
+## Credits
+
+FDJASVS - Founder, Founder Of FDJASVS X
+Bluelands - Co-Founder Of FDJASVS X, Founder Of BloxInstaller, BloxInstaller.dll
