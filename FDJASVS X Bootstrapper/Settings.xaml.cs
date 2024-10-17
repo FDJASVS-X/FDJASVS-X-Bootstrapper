@@ -34,7 +34,7 @@ namespace FDJASVS_X_Bootstrapper
             OldDeathCheckBox.IsChecked = Properties.Settings.Default.OldDeathSoundS;
             OldAvatarModelSwapCheckBox.IsChecked = Properties.Settings.Default.OldAvatarBack;
             AutoUpdateCheckBox.IsChecked = Properties.Settings.Default.AutoUpdatePLS;
-            LiveCheckBox.IsChecked = Properties.Settings.Default.LIVES;
+         
         }
 
         private void ToggleButton_Checked(object sender, RoutedEventArgs e)
@@ -131,18 +131,6 @@ namespace FDJASVS_X_Bootstrapper
             Properties.Settings.Default.Save();
         }
 
-        private void Live_Checked(object sender, RoutedEventArgs e)
-        {
-            Properties.Settings.Default.LIVES = true;
-            Properties.Settings.Default.Save();
-        }
-
-
-
-        private void Live_Unchecked(object sender, RoutedEventArgs e)
-        {
-            Properties.Settings.Default.LIVES = false;
-            Properties.Settings.Default.Save();
-        }
+        
     }
 }

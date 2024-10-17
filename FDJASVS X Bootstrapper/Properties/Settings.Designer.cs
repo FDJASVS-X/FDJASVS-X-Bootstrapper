@@ -241,13 +241,13 @@ namespace FDJASVS_X_Bootstrapper.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool LIVES {
+        [global::System.Configuration.DefaultSettingValueAttribute("null")]
+        public string Channel {
             get {
-                return ((bool)(this["LIVES"]));
+                return ((string)(this["Channel"]));
             }
             set {
-                this["LIVES"] = value;
+                this["Channel"] = value;
             }
         }
     }
