@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FDJASVS_X_Bootstrapper;
+using BloxInstaller_DLL;
 
 namespace FDJASVS_X_Bootstrapper
 {
