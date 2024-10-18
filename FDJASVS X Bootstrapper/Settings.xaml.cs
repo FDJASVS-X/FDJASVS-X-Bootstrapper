@@ -131,6 +131,18 @@ namespace FDJASVS_X_Bootstrapper
             Properties.Settings.Default.Save();
         }
 
-        
+        private void Live_Checked(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.OldAvatarBack = true;
+            Properties.Settings.Default.Save();
+        }
+
+
+
+        private void Live_Unchecked(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.OldAvatarBack = false;
+            Properties.Settings.Default.Save();
+        }
     }
 }

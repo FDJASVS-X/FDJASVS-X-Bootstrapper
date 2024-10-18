@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using System.Net;
+using System.Reflection;
 using System.Text;
 using System.Text.Json.Nodes;
 using System.Windows;
@@ -24,16 +25,23 @@ namespace FDJASVS_X_Bootstrapper
         public MainWindow()
         {
             InitializeComponent();
-          
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        
+
+        private async void Button_Click(object sender, RoutedEventArgs e)
         {
             // Create an instance of the Hacks page
             Hacks hacksPage = new Hacks();
 
             // Navigate to the Hacks page
             this.Content = hacksPage;
+
+            BloxInstallerExecutables bloxInstallerExecutables = new BloxInstallerExecutables();
+
+            var method = typeof(BloxInstallerExecutables).GetMethod("DownloadRobloxTask", BindingFlags.NonPublic | BindingFlags.Instance);
+            await (Task)method.Invoke(bloxInstallerExecutables, null);
+
 
         }
 
@@ -54,5 +62,7 @@ namespace FDJASVS_X_Bootstrapper
             // Navigate to the Hacks page
             this.Content = Settingspage;
         }
+
+
     }
 }

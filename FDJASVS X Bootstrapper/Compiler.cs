@@ -7,9 +7,12 @@ using System.Threading.Tasks;
 using FDJASVS_X_Bootstrapper;
 using BloxInstaller_DLL;
 using System.Windows.Controls;
+using System.Windows;
 
 namespace FDJASVS_X_Bootstrapper
 {
+
+  
 
     class GGStorage
     {
@@ -26,12 +29,28 @@ namespace FDJASVS_X_Bootstrapper
 
     }
 
-
-    class Compiler : GGStorage
+    class BloxInstallerExecutables
     {
-        
+
+     
+
+
+        internal async Task DownloadRobloxTask()
+        {
+          int DownloadRoblox = await EmeraldGG.InitializationAsync();
+
+        }
+
+       
+    }
+
+   
+ class Compiler : GGStorage
+    {
+     
 
     }
 
     
 }
+
