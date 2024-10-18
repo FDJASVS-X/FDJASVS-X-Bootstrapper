@@ -38,8 +38,24 @@ namespace FDJASVS_X_Bootstrapper
         internal async Task DownloadRobloxTask()
         {
           int DownloadRoblox = await EmeraldGG.InitializationAsync();
-
+            if (DownloadRoblox == 1)
+            {
+                MessageBox.Show("Roblox Downloaded/Updated Successfully", "EmeraldGG");
+            }
+            else if (DownloadRoblox == 2)
+            {
+           
+            }
+            else if (DownloadRoblox == 3)
+            {
+                MessageBox.Show("Something Went Wrong :( Please Try Again Or Report It On Our GitHub Repository", "EmeraldGG");
+            }
+            else
+            {
+                MessageBox.Show("Unknown Error", "...");
+            }
         }
+
 
        
     }
