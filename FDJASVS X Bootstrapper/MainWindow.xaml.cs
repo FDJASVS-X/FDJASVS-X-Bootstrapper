@@ -40,7 +40,7 @@ namespace FDJASVS_X_Bootstrapper
 
             BloxInstallerExecutables bloxInstallerExecutables = new BloxInstallerExecutables();
 
-            bloxInstallerExecutables.GetChannel();
+            bloxInstallerExecutables.GetLatestVersion();
 
 
         }

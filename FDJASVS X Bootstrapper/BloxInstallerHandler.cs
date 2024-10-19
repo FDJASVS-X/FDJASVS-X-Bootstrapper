@@ -79,10 +79,25 @@ namespace FDJASVS_X_Bootstrapper
             }
             else
             {
-                MessageBox.Show("Failure", "Nooooo");
+                MessageBox.Show("Something Went Wrong :(", "EmeraldGG");
             }
         }
 
+        internal async void GetLatestVersion()
+        {
+            var GetLatestVersion = EmeraldGG.GetLatestVersion();
+            if (GetLatestVersion != null)
+            {
+                MessageBox.Show("Newest Roblox Version Is " + EmeraldGG.GetLatestVersion(), "EmeraldGG");
+            }
+            else
+            {
+                MessageBox.Show("Can't Identify Newest Roblox Version, Press OK To Check For Roblox...", "EmeraldGG");
+                DownloadRobloxTask();
+
+                
+            }
+        }
     }
 
 
