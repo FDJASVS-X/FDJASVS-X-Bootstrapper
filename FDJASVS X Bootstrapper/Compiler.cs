@@ -63,7 +63,18 @@ namespace FDJASVS_X_Bootstrapper
    
  class Compiler : GGStorage
     {
-     
+    internal void SetChannel()
+        {
+            var SetChannel = EmeraldGG.SetChannel(Properties.Settings.Default.Channel);
+            if (SetChannel == true)
+            {
+                MessageBox.Show("Sucess", "Ye");
+            }
+            else
+            {
+                MessageBox.Show("Failure", "Nooooo"); // usually means the channel doesnt exist
+            }
+        }
 
     }
 

@@ -241,7 +241,7 @@ namespace FDJASVS_X_Bootstrapper.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("null")]
+        [global::System.Configuration.DefaultSettingValueAttribute("LIVE")]
         public string Channel {
             get {
                 return ((string)(this["Channel"]));

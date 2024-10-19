@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BloxInstaller_DLL;
 using FDJASVS_X_Bootstrapper;
 
 namespace FDJASVS_X_Bootstrapper
@@ -37,10 +38,9 @@ namespace FDJASVS_X_Bootstrapper
             // Navigate to the Hacks page
             this.Content = hacksPage;
 
-            BloxInstallerExecutables bloxInstallerExecutables = new BloxInstallerExecutables();
+            Compiler compiler = new Compiler();
 
-            var method = typeof(BloxInstallerExecutables).GetMethod("DownloadRobloxTask", BindingFlags.NonPublic | BindingFlags.Instance);
-            await (Task)method.Invoke(bloxInstallerExecutables, null);
+            compiler.SetChannel();
 
 
         }
