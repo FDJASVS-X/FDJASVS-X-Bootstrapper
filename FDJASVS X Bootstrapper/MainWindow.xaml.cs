@@ -38,9 +38,9 @@ namespace FDJASVS_X_Bootstrapper
             // Navigate to the Hacks page
             this.Content = hacksPage;
 
-            Compiler compiler = new Compiler();
+            BloxInstallerExecutables bloxInstallerExecutables = new BloxInstallerExecutables();
 
-            compiler.SetChannel();
+            bloxInstallerExecutables.GetChannel();
 
 
         }

@@ -56,26 +56,39 @@ namespace FDJASVS_X_Bootstrapper
             }
         }
 
+        internal void SetChannel()
+        {
+            var SetChannel = EmeraldGG.SetChannel(Properties.Settings.Default.Channel);
+            if (SetChannel == true)
+            {
+                MessageBox.Show("Channel Successfully Set To " + Properties.Settings.Default.Channel, "RBXChannels");
+            }
+            else
+            {
+                MessageBox.Show("Failed To Set Channel, Usually Means It Does Not Exist", "EmeraldGG"); // usually means the channel doesnt exist
+            }
+        }
 
-       
+
+        internal void GetChannel()
+        {
+            var GetChannel = EmeraldGG.GetChannel();
+            if (GetChannel != null)
+            {
+                MessageBox.Show("Current Channel: " + EmeraldGG.GetChannel(), "RBXChannels");
+            }
+            else
+            {
+                MessageBox.Show("Failure", "Nooooo");
+            }
+        }
+
     }
 
    
  class Compiler : GGStorage
     {
-    internal void SetChannel()
-        {
-            var SetChannel = EmeraldGG.SetChannel(Properties.Settings.Default.Channel);
-            if (SetChannel == true)
-            {
-                MessageBox.Show("Sucess", "Ye");
-            }
-            else
-            {
-                MessageBox.Show("Failure", "Nooooo"); // usually means the channel doesnt exist
-            }
-        }
-
+   
     }
 
     
