@@ -40,7 +40,9 @@ namespace FDJASVS_X_Bootstrapper
 
             BloxInstallerExecutables bloxInstallerExecutables = new BloxInstallerExecutables();
 
-            bloxInstallerExecutables.GetLatestVersion();
+            var method = typeof(BloxInstallerExecutables).GetMethod("DownloadRobloxTask", BindingFlags.NonPublic | BindingFlags.Instance);
+            await (Task)method.Invoke(bloxInstallerExecutables, null);
+
 
 
         }
