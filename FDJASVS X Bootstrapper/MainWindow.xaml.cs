@@ -39,25 +39,7 @@ namespace FDJASVS_X_Bootstrapper
             // Navigate to the Hacks page
             this.Content = hacksPage;
 
-            // Create a unique mutex to allow multi-instance launching
-            Mutex? singletonMutex = null;
-
-            try
-            {
-                // Try opening the existing mutex
-                Mutex.OpenExisting("ROBLOX_singletonMutex");
-            }
-            catch
-            {
-                // Create a new mutex if it doesn't already exist
-                singletonMutex = new Mutex(true, "ROBLOX_singletonMutex");
-            }
-
-            // Keep the mutex alive while Roblox instances are running
-            while (Process.GetProcessesByName("RobloxPlayerBeta").Any())
-            {
-                Thread.Sleep(5000); // Check every 5 seconds
-            }
+           
 
 
 
