@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.Diagnostics;
+using System.IO;
 using System.Net;
 using System.Reflection;
 using System.Text;
@@ -38,10 +39,25 @@ namespace FDJASVS_X_Bootstrapper
             // Navigate to the Hacks page
             this.Content = hacksPage;
 
-            BloxInstallerExecutables bloxInstallerExecutables = new BloxInstallerExecutables();
+            // Create a unique mutex to allow multi-instance launching
+            Mutex? singletonMutex = null;
 
-            var method = typeof(BloxInstallerExecutables).GetMethod("DownloadRobloxTask", BindingFlags.NonPublic | BindingFlags.Instance);
-            await (Task)method.Invoke(bloxInstallerExecutables, null);
+            try
+            {
+                // Try opening the existing mutex
+                Mutex.OpenExisting("ROBLOX_singletonMutex");
+            }
+            catch
+            {
+                // Create a new mutex if it doesn't already exist
+                singletonMutex = new Mutex(true, "ROBLOX_singletonMutex");
+            }
+
+            // Keep the mutex alive while Roblox instances are running
+            while (Process.GetProcessesByName("RobloxPlayerBeta").Any())
+            {
+                Thread.Sleep(5000); // Check every 5 seconds
+            }
 
 
 
