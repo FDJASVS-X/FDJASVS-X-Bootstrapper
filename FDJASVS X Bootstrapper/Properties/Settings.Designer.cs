@@ -250,5 +250,17 @@ namespace FDJASVS_X_Bootstrapper.Properties {
                 this["Channel"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool DeveloperMode {
+            get {
+                return ((bool)(this["DeveloperMode"]));
+            }
+            set {
+                this["DeveloperMode"] = value;
+            }
+        }
     }
 }
