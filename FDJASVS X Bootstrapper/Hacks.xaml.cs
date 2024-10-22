@@ -38,6 +38,8 @@ namespace FDJASVS_X_Bootstrapper
             this.Loaded += Hacks_Loaded;
         }
 
+       
+
         private void Hacks_Loaded(object sender, RoutedEventArgs e)
         {
             // Load saved settings and set the checkbox states
@@ -47,6 +49,7 @@ namespace FDJASVS_X_Bootstrapper
             SpeedHackCheckBox.IsChecked = Properties.Settings.Default.SpeedHackCheckBoxSetting;
             PSuperJumpCheckBox.IsChecked = Properties.Settings.Default.SuperJumpCheckBoxSetting;
             SemiCheckBox.IsChecked = Properties.Settings.Default.SemiCheckBoxSetting;
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
