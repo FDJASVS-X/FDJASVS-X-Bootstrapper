@@ -67,6 +67,4 @@ Introducing...
 
 ## Credits
 
-FDJASVS - Founder, Founder Of FDJASVS X
-
-Bluelands - Co-Founder Of FDJASVS X, Founder Of BloxInstaller, BloxInstaller.dll
+[Bloxstrap](https://github.com/bloxstraplabs) - Inspiration
