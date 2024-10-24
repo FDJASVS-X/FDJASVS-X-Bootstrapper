@@ -1,5 +1,5 @@
-![Status](https://img.shields.io/badge/Development%20Paused-FF0000?label=Status)
-![Progress](https://img.shields.io/badge/75%25-blue?label=Progress)
+![Static Badge](https://img.shields.io/badge/Bootstrapper-blue?label=FDJASVS%20X)
+
 
 ## Credits
 
