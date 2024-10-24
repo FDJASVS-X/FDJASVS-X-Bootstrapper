@@ -1,6 +1,12 @@
 ![Status](https://img.shields.io/badge/Development%20Paused-FF0000?label=Status)
 ![Progress](https://img.shields.io/badge/75%25-blue?label=Progress)
 
+## Credits
+
+[Bloxstrap](https://github.com/bloxstraplabs) - Inspiration
+
+[Flikter](https://github.com/Flikter) - [Multiple-Roblox-Instances](https://github.com/Flikter/Multiple-Roblox-Instances)
+
 # The Story Behind FDJASVS X Bootstrapper
 
 **PIG 64(Where FDJASVS X Really Originated)**
@@ -64,12 +70,6 @@ At the end of Summer, Emerald finally Found Time To Help Me With FDJASVS X Boots
 Introducing...
 
 ![Logo](Images/FDXBLogo.png)
-
-## Credits
-
-[Bloxstrap](https://github.com/bloxstraplabs) - Inspiration
-
-[Flikter](https://github.com/Flikter) - [Multiple-Roblox-Instances](https://github.com/Flikter/Multiple-Roblox-Instances)
 
 # The Story Behind FDJASVS X Studio
 
