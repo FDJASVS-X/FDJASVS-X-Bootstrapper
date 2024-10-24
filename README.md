@@ -68,3 +68,5 @@ Introducing...
 ## Credits
 
 [Bloxstrap](https://github.com/bloxstraplabs) - Inspiration
+
+[Flikter](https://github.com/Flikter) - [Multiple-Roblox-Instances](https://github.com/Flikter/Multiple-Roblox-Instances)
