@@ -39,8 +39,12 @@ namespace FDJASVS_X_Bootstrapper
             // Navigate to the Hacks page
             this.Content = hacksPage;
 
-           
 
+            Compiler compiler = new Compiler();
+
+            // compiler.CheckHacks();
+
+            
 
 
         }
@@ -52,6 +56,8 @@ namespace FDJASVS_X_Bootstrapper
 
             // Navigate to the Hacks page
             this.Content = otherPage;
+
+            EmeraldGG.StopMultiInstance();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)

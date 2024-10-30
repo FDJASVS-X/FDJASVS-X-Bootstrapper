@@ -16,7 +16,7 @@
 
   <ItemGroup>
     <Reference Include="BloxInstaller-DLL">
-      <HintPath>..\..\..\..\Desktop\Fdjasvs X BootStrapper DLL Test\BloxInstaller-DLL.dll</HintPath>
+      <HintPath>..\..\..\..\Downloads\BloxInstaller-DLL.dll</HintPath>
     </Reference>
   </ItemGroup>
 
