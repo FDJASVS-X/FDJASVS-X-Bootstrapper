@@ -38,7 +38,7 @@ namespace FDJASVS_X_Bootstrapper
             this.Loaded += Hacks_Loaded;
         }
 
-       
+        BloxInstallerExecutables bloxInstallerExecutables = new BloxInstallerExecutables();
 
         private void Hacks_Loaded(object sender, RoutedEventArgs e)
         {
@@ -114,7 +114,7 @@ namespace FDJASVS_X_Bootstrapper
         private void CircleBox_Checked(object sender, RoutedEventArgs e)
         {
             CircleUnderAvatars = true;
-            Properties.Settings.Default.CircleCheckBoxSetting = true;
+            Properties.Settings.Default.CircleCheckBoxSetting = true;    
             Properties.Settings.Default.Save(); // Save the setting
         }
 

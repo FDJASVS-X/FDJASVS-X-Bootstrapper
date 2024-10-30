@@ -37,6 +37,8 @@ namespace FDJASVS_X_Bootstrapper
          
         }
 
+        public bool ChannelWarned = false;
+
         private void ToggleButton_Checked(object sender, RoutedEventArgs e)
         {
             // Get the current window that hosts the Hacks page
@@ -131,18 +133,14 @@ namespace FDJASVS_X_Bootstrapper
             Properties.Settings.Default.Save();
         }
 
-        private void Live_Checked(object sender, RoutedEventArgs e)
+        private void ChannTextBoxFocus(object sender, RoutedEventArgs e)
         {
-            Properties.Settings.Default.OldAvatarBack = true;
-            Properties.Settings.Default.Save();
-        }
+            if (ChannelWarned == false)
+            {
+                MessageBox.Show("MODIFYING THIS VALUE MAY LEAD TO UNINTENDED CONSEQUENCES, IF YOU DON'T KNOW WHAT YOU'RE DOING AVOID CHANGING THIS VALUE. YOU HAVE BEEN WARNED", "FDJASVS", MessageBoxButton.OK, MessageBoxImage.Warning);
+                ChannelWarned = true;
+            }
 
-
-
-        private void Live_Unchecked(object sender, RoutedEventArgs e)
-        {
-            Properties.Settings.Default.OldAvatarBack = false;
-            Properties.Settings.Default.Save();
         }
     }
 }

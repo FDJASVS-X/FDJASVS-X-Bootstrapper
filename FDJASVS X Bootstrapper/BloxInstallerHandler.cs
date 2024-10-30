@@ -8,6 +8,7 @@ using FDJASVS_X_Bootstrapper;
 using BloxInstaller_DLL;
 using System.Windows.Controls;
 using System.Windows;
+using System.Reflection;
 
 namespace FDJASVS_X_Bootstrapper
 {
@@ -99,8 +100,75 @@ namespace FDJASVS_X_Bootstrapper
                 
             }
         }
-        
-        
+
+        internal async Task AddFlagTask(string name, string value)
+        {
+            
+
+            BloxInstallerExecutables bloxInstallerExecutables = new BloxInstallerExecutables();
+
+
+
+            var AddFlag = await EmeraldGG.AddFlag(name, value);
+            if (AddFlag == 1)
+            {
+
+            }
+            else if (AddFlag == 2)
+            {
+                MessageBox.Show("Roblox Outdated Or Not Installed", ":(");
+
+
+                var method = typeof(BloxInstallerExecutables).GetMethod("DownloadRobloxTask", BindingFlags.NonPublic | BindingFlags.Instance);
+                await (Task)method.Invoke(bloxInstallerExecutables, null);
+
+
+            }
+            else if (AddFlag == 3)
+            {
+                MessageBox.Show("Something Went Wrong", ":(");
+            }
+            else if (AddFlag == 4)
+            {
+                MessageBox.Show("Value Replaced Succesfully", "FDJASVS X");
+            }
+            else
+            {
+                MessageBox.Show("Unknown Error", "....");
+            }
+
+
+        }
+
+        internal async Task RemoveFlagTask(string name)
+        {
+
+            var RemoveFlag = await EmeraldGG.RemoveFlag(name);
+            if (RemoveFlag == 1)
+            {
+
+            }
+            else if (RemoveFlag == 2)
+            {
+
+            }
+            else if (RemoveFlag == 3)
+            {
+                MessageBox.Show("Something Went Wrong", ":(");
+            }
+            else if (RemoveFlag == 4)
+            {
+             
+            }
+            else
+            {
+                MessageBox.Show("Unknown Error", "....");
+            }
+
+
+        }
+
+
     }
 
 
