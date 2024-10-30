@@ -1,5 +1,11 @@
-![Status](https://img.shields.io/badge/Development%20Paused-FF0000?label=Status)
-![Progress](https://img.shields.io/badge/75%25-blue?label=Progress)
+![Static Badge](https://img.shields.io/badge/Bootstrapper-blue?label=FDJASVS%20X)
+
+
+## Credits
+
+[Bloxstrap](https://github.com/bloxstraplabs) - Inspiration
+
+[Flikter](https://github.com/Flikter) - [Multiple-Roblox-Instances](https://github.com/Flikter/Multiple-Roblox-Instances)
 
 # The Story Behind FDJASVS X Bootstrapper
 
@@ -65,8 +71,10 @@ Introducing...
 
 ![Logo](Images/FDXBLogo.png)
 
-## Credits
+# The Story Behind FDJASVS X Studio
 
-[Bloxstrap](https://github.com/bloxstraplabs) - Inspiration
+So for a few months now, I've been struggling with the fact that sometimes, Roblox Studio just Didn't Run For Me, It annoyed Me For Long enough. So I took matters Into My Own Hands. If you Also Have The Same issue As Me, feel free To Use This To Boot Roblox Studio Without The Struggle Of Re-Installing It.
 
-[Flikter](https://github.com/Flikter) - [Multiple-Roblox-Instances](https://github.com/Flikter/Multiple-Roblox-Instances)
+Introducing...
+
+# FDJASVS X Studio
