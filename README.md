@@ -5,8 +5,6 @@
 
 [Bloxstrap](https://github.com/bloxstraplabs) - Inspiration
 
-[Flikter](https://github.com/Flikter) - [Multiple-Roblox-Instances](https://github.com/Flikter/Multiple-Roblox-Instances)
-
 # The Story Behind FDJASVS X Bootstrapper
 
 **PIG 64(Where FDJASVS X Really Originated)**
