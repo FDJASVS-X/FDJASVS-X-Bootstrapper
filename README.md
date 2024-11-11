@@ -17,6 +17,8 @@
 - FDJASVS X Bootstrapper is NOT and will NOT be malware, We just want to offer you features that Bloxstrap doesn't.
   - BloxInstaller Is Also Safe. It Is Closed-Source, But You can Check FDJASVS X Bootstrapper's Source Code to see what commands does It Execute(search up `EmeraldGG` in the search bar) 
 - Unfortunately, FDJASVS X Bootstrapper only Works on Windows and does not offer Support for MacOS, Linux Or Any Other Operating System. Apologies to any non-windows user out there.
+- To Enable Developer Mode, Click The Wrench Icon In FDJASVS X Bootstrapper's Main Window
+  - I'd Also Like To Point Out That You Should Use Developer Mode With Caution, Some Of The Features In It Can Get You Banned. Have Fun! 
 
 ## 🤩TOP FEATURES🤩
 - Multi-Instance Launching
