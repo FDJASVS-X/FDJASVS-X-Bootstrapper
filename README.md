@@ -20,6 +20,6 @@
 
 # TOP FEATURES
 1. Multi-Instance Launching
- - Allows You To Launch Multiple Roblox Instances, Taking Ownership Of Their Mutex.
-3. Change Channel[Developer Mode]
- - With this feature, you can now change The ROBLOX Download Channel[RISKY]
+   - Allows You To Launch Multiple Roblox Instances, Taking Ownership Of Their Mutex.
+2. Change Channel[Developer Mode]
+   - With this feature, you can now change The ROBLOX Download Channel[RISKY]
