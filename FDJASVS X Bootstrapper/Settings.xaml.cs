@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -30,14 +31,13 @@ namespace FDJASVS_X_Bootstrapper
         {
             // Load saved settings and set the checkbox states
             RPCheckBox.IsChecked = Properties.Settings.Default.RPCSetting;
-           MultInstanceCheckBox.IsChecked = Properties.Settings.Default.MultiInstanceLaunchingSetting;
+            MultInstanceCheckBox.IsChecked = Properties.Settings.Default.MultiInstanceLaunchingSetting;
             OldDeathCheckBox.IsChecked = Properties.Settings.Default.OldDeathSoundS;
             OldAvatarModelSwapCheckBox.IsChecked = Properties.Settings.Default.OldAvatarBack;
             AutoUpdateCheckBox.IsChecked = Properties.Settings.Default.AutoUpdatePLS;
-         
         }
 
-        public bool ChannelWarned = false;
+        
 
         private void ToggleButton_Checked(object sender, RoutedEventArgs e)
         {
@@ -68,47 +68,75 @@ namespace FDJASVS_X_Bootstrapper
         {
             Properties.Settings.Default.MultiInstanceLaunchingSetting = true;
             Properties.Settings.Default.Save();
+            if (Properties.Settings.Default.DevModeDebug)
+            {
+                MessageBox.Show("Set MultiInstanceLaunchingSetting Setting To " + Properties.Settings.Default.MultiInstanceLaunchingSetting, "Debugger", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
 
         private void Multi_Unchecked(object sender, RoutedEventArgs e)
         {
             Properties.Settings.Default.MultiInstanceLaunchingSetting = false;
             Properties.Settings.Default.Save();
+            if (Properties.Settings.Default.DevModeDebug)
+            {
+                MessageBox.Show("Set MultiInstanceLaunchingSetting Setting To " + Properties.Settings.Default.MultiInstanceLaunchingSetting, "Debugger", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
 
         private void RPCBox_Checked(object sender, RoutedEventArgs e)
         {
             Properties.Settings.Default.RPCSetting = true;
             Properties.Settings.Default.Save();
+            if (Properties.Settings.Default.DevModeDebug)
+            {
+                MessageBox.Show("Set RPCSetting Setting To " + Properties.Settings.Default.RPCSetting, "Debugger", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
 
         private void RPCBox_Unchecked(object sender, RoutedEventArgs e)
         {
             Properties.Settings.Default.RPCSetting = false;
             Properties.Settings.Default.Save();
+            if (Properties.Settings.Default.DevModeDebug)
+            {
+                MessageBox.Show("Set RPCSetting Setting To " + Properties.Settings.Default.RPCSetting, "Debugger", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
 
-        
+
 
         private void AutoUpdate_Checked(object sender, RoutedEventArgs e)
         {
             Properties.Settings.Default.AutoUpdatePLS = true;
             Properties.Settings.Default.Save();
+            if (Properties.Settings.Default.DevModeDebug)
+            {
+                MessageBox.Show("Set AutoUpdatePLS Setting To " + Properties.Settings.Default.AutoUpdatePLS, "Debugger", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
 
         }
 
-      
+
 
         private void AutoUpdate_Unchecked(object sender, RoutedEventArgs e)
         {
             Properties.Settings.Default.AutoUpdatePLS = false;
             Properties.Settings.Default.Save();
+            if (Properties.Settings.Default.DevModeDebug)
+            {
+                MessageBox.Show("Set AutoUpdatePLS Setting To " + Properties.Settings.Default.AutoUpdatePLS, "Debugger", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
 
         private void OldDeath_Checked(object sender, RoutedEventArgs e)
         {
             Properties.Settings.Default.OldDeathSoundS = true;
             Properties.Settings.Default.Save();
+            if (Properties.Settings.Default.DevModeDebug)
+            {
+                MessageBox.Show("Set OldDeathSoundS Setting To " + Properties.Settings.Default.OldDeathSoundS, "Debugger", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
 
 
@@ -117,12 +145,20 @@ namespace FDJASVS_X_Bootstrapper
         {
             Properties.Settings.Default.OldDeathSoundS = false;
             Properties.Settings.Default.Save();
+            if (Properties.Settings.Default.DevModeDebug)
+            {
+                MessageBox.Show("Set OldDeathSoundS Setting To " + Properties.Settings.Default.OldDeathSoundS, "Debugger", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
 
         private void Swap_Checked(object sender, RoutedEventArgs e)
         {
             Properties.Settings.Default.OldAvatarBack = true;
             Properties.Settings.Default.Save();
+            if (Properties.Settings.Default.DevModeDebug)
+            {
+                MessageBox.Show("Set OldAvatarBack Setting To " + Properties.Settings.Default.OldAvatarBack, "Debugger", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
 
 
@@ -131,16 +167,14 @@ namespace FDJASVS_X_Bootstrapper
         {
             Properties.Settings.Default.OldAvatarBack = false;
             Properties.Settings.Default.Save();
-        }
-
-        private void ChannTextBoxFocus(object sender, RoutedEventArgs e)
-        {
-            if (ChannelWarned == false)
+            if (Properties.Settings.Default.DevModeDebug)
             {
-                MessageBox.Show("MODIFYING THIS VALUE MAY LEAD TO UNINTENDED CONSEQUENCES, IF YOU DON'T KNOW WHAT YOU'RE DOING AVOID CHANGING THIS VALUE. YOU HAVE BEEN WARNED", "FDJASVS", MessageBoxButton.OK, MessageBoxImage.Warning);
-                ChannelWarned = true;
+                MessageBox.Show("Set OldAvatarBack Setting To " + Properties.Settings.Default.OldAvatarBack, "Debugger", MessageBoxButton.OK, MessageBoxImage.Information);
             }
-
         }
+
+
+       
     }
+
 }

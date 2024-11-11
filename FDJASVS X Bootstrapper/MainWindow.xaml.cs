@@ -29,7 +29,7 @@ namespace FDJASVS_X_Bootstrapper
             InitializeComponent();
         }
 
-        
+
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -49,7 +49,7 @@ namespace FDJASVS_X_Bootstrapper
 
             // Navigate to the Hacks page
             this.Content = otherPage;
-            
+
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
@@ -62,7 +62,30 @@ namespace FDJASVS_X_Bootstrapper
         }
 
 
+        private void DevModeClick(object sender, RoutedEventArgs e)
+        {
+           if (Properties.Settings.Default.DeveloperMode == true)
+            {
+                // Create an instance of the Hacks page
+                DevWindow devWindow = new DevWindow();
 
+                // Navigate to the Hacks page
+                devWindow.Show();
 
+                if (Properties.Settings.Default.DevModeDebug == true)
+                {
+                    MessageBox.Show("DevWindow Open!", "Debugger", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                }
+            }
+           else if (Properties.Settings.Default.DeveloperMode == false)
+            {
+              MessageBoxResult DevResult = MessageBox.Show("Are you sure you want To Enable Developer Mode? It Will Unlock Features To Be Used With Extreme Caution or else It'll Result In Consequences. Do You Want To Proceed?", "FDJASVS X Bootstrapper", MessageBoxButton.YesNo);
+                if (DevResult == MessageBoxResult.Yes)
+                {
+                    Properties.Settings.Default.DeveloperMode = true;
+                    Properties.Settings.Default.Save();
+                }
+            }
+        }
     }
 }

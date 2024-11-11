@@ -241,6 +241,18 @@ namespace FDJASVS_X_Bootstrapper.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool DeveloperMode {
+            get {
+                return ((bool)(this["DeveloperMode"]));
+            }
+            set {
+                this["DeveloperMode"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("LIVE")]
         public string Channel {
             get {
@@ -254,12 +266,12 @@ namespace FDJASVS_X_Bootstrapper.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool DeveloperMode {
+        public bool DevModeDebug {
             get {
-                return ((bool)(this["DeveloperMode"]));
+                return ((bool)(this["DevModeDebug"]));
             }
             set {
-                this["DeveloperMode"] = value;
+                this["DevModeDebug"] = value;
             }
         }
     }

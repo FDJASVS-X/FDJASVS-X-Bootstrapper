@@ -13,8 +13,6 @@ using System.Reflection;
 namespace FDJASVS_X_Bootstrapper
 {
 
-
-
     class GGStorage
     {
         public String[] Lightningfflags = { /* Voxel Lighting (Phase 1) */ "@\r\n{\r\n    \"DFFlagDebugRenderForceTechnologyVoxel\": \"True\"\r\n}", /* Shadowmap Lighting (Phase 2) */ "@{\r\n    \"FFlagDebugForceFutureIsBrightPhase2\": \"True\"\r\n}", /* Future Lighting (Phase 3)) */ "@{\r\n    \"FFlagDebugForceFutureIsBrightPhase3\": \"True\"\r\n}", /* Disable Shadows */ "@{\r\n    \"FIntRenderShadowIntensity\": \"0\"\r\n}" };
@@ -32,25 +30,30 @@ namespace FDJASVS_X_Bootstrapper
 
 
 
-    class BloxInstallerExecutables
+     class BloxInstallerExecutables
     {
-
-     
-
+       
+        
         internal async Task DownloadRobloxTask()
         {
           int DownloadRoblox = await EmeraldGG.InitializationAsync();
             if (DownloadRoblox == 1)
             {
-                MessageBox.Show("Roblox Downloaded/Updated Successfully", "EmeraldGG");
+                if (Properties.Settings.Default.DevModeDebug == true)
+                {
+                    MessageBox.Show("Roblox Downloaded/Updated Successfully", "Debugger");
+                }
             }
             else if (DownloadRoblox == 2)
             {
-           
+                if (Properties.Settings.Default.DevModeDebug == true)
+                {
+                    MessageBox.Show("Roblox Already Installed", "Debugger", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
             }
             else if (DownloadRoblox == 3)
             {
-                MessageBox.Show("Something Went Wrong :( Please Try Again Or Report It On Our GitHub Repository", "EmeraldGG");
+                    MessageBox.Show("Something Went Wrong :( Please Try Again Or Report It On Our GitHub Repository", "EmeraldGG");
             }
             else
             {
@@ -130,7 +133,7 @@ namespace FDJASVS_X_Bootstrapper
             }
             else if (AddFlag == 4)
             {
-                MessageBox.Show("Value Replaced Succesfully", "FDJASVS X");
+               
             }
             else
             {

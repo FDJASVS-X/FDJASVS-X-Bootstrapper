@@ -116,6 +116,10 @@ namespace FDJASVS_X_Bootstrapper
             CircleUnderAvatars = true;
             Properties.Settings.Default.CircleCheckBoxSetting = true;    
             Properties.Settings.Default.Save(); // Save the setting
+            if (Properties.Settings.Default.DevModeDebug)
+            {
+                MessageBox.Show("Set CircleCheckBoxSetting Setting To " + Properties.Settings.Default.CircleCheckBoxSetting, "Debugger", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
 
         private void CircleBox_Unchecked(object sender, RoutedEventArgs e)
@@ -123,6 +127,10 @@ namespace FDJASVS_X_Bootstrapper
             CircleUnderAvatars = false;
             Properties.Settings.Default.CircleCheckBoxSetting = false;
             Properties.Settings.Default.Save(); // Save the setting
+            if (Properties.Settings.Default.DevModeDebug)
+            {
+                MessageBox.Show("Set CircleCheckBoxSetting Setting To " + Properties.Settings.Default.CircleCheckBoxSetting, "Debugger", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
 
         private void OutlineBox_Checked(object sender, RoutedEventArgs e)
@@ -130,6 +138,10 @@ namespace FDJASVS_X_Bootstrapper
             Outline = true;
             Properties.Settings.Default.OutlineCheckBoxSetting = true;
             Properties.Settings.Default.Save(); // Save the setting
+            if (Properties.Settings.Default.DevModeDebug)
+            {
+                MessageBox.Show("Set OutlineCheckBoxSetting Setting To " + Properties.Settings.Default.OutlineCheckBoxSetting, "Debugger", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
 
         private void OutlineBox_Unchecked(object sender, RoutedEventArgs e)
@@ -137,6 +149,10 @@ namespace FDJASVS_X_Bootstrapper
             Outline = false;
             Properties.Settings.Default.OutlineCheckBoxSetting = false;
             Properties.Settings.Default.Save(); // Save the setting
+            if (Properties.Settings.Default.DevModeDebug)
+            {
+                MessageBox.Show("Set OutlineCheckBoxSetting Setting To " + Properties.Settings.Default.OutlineCheckBoxSetting, "Debugger", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
 
         private void xrayBox_Checked(object sender, RoutedEventArgs e)
@@ -144,6 +160,10 @@ namespace FDJASVS_X_Bootstrapper
             xray = true;
             Properties.Settings.Default.xrayCheckBoxSetting = true;
             Properties.Settings.Default.Save(); // Save the setting
+            if (Properties.Settings.Default.DevModeDebug)
+            {
+                MessageBox.Show("Set xrayCheckBoxSetting Setting To " + Properties.Settings.Default.xrayCheckBoxSetting, "Debugger", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
 
         private void xrayBox_Unchecked(object sender, RoutedEventArgs e)
@@ -151,6 +171,10 @@ namespace FDJASVS_X_Bootstrapper
             xray = false;
             Properties.Settings.Default.xrayCheckBoxSetting = false;
             Properties.Settings.Default.Save(); // Save the setting
+            if (Properties.Settings.Default.DevModeDebug)
+            {
+                MessageBox.Show("Set xrayCheckBoxSetting Setting To " + Properties.Settings.Default.xrayCheckBoxSetting, "Debugger", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
 
         private void SpeedBox_Checked(object sender, RoutedEventArgs e)
@@ -158,6 +182,10 @@ namespace FDJASVS_X_Bootstrapper
             SpeedHack = true;
             Properties.Settings.Default.SpeedHackCheckBoxSetting = true;
             Properties.Settings.Default.Save(); // Save the setting
+            if (Properties.Settings.Default.DevModeDebug)
+            {
+                MessageBox.Show("Set SpeedHackCheckBoxSetting Setting To " + Properties.Settings.Default.SpeedHackCheckBoxSetting, "Debugger", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
 
         private void SpeedBox_Unchecked(object sender, RoutedEventArgs e)
@@ -165,6 +193,10 @@ namespace FDJASVS_X_Bootstrapper
             SpeedHack = false;
             Properties.Settings.Default.SpeedHackCheckBoxSetting = false;
             Properties.Settings.Default.Save(); // Save the setting
+            if (Properties.Settings.Default.DevModeDebug)
+            {
+                MessageBox.Show("Set SpeedHackCheckBoxSetting Setting To " + Properties.Settings.Default.SpeedHackCheckBoxSetting, "Debugger", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
 
         private void SuperJumpBox_Checked(object sender, RoutedEventArgs e)
@@ -172,6 +204,10 @@ namespace FDJASVS_X_Bootstrapper
             SuperJump = true;
             Properties.Settings.Default.SuperJumpCheckBoxSetting = true;
             Properties.Settings.Default.Save(); // Save the setting
+            if (Properties.Settings.Default.DevModeDebug)
+            {
+                MessageBox.Show("Set SuperJumpCheckBoxSetting Setting To " + Properties.Settings.Default.SuperJumpCheckBoxSetting, "Debugger", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
 
         private void SuperJumpBox_Unchecked(object sender, RoutedEventArgs e)
@@ -179,6 +215,10 @@ namespace FDJASVS_X_Bootstrapper
             SuperJump = false;
             Properties.Settings.Default.SuperJumpCheckBoxSetting = false;
             Properties.Settings.Default.Save(); // Save the setting
+            if (Properties.Settings.Default.DevModeDebug)
+            {
+                MessageBox.Show("Set SuperJumpCheckBoxSetting Setting To " + Properties.Settings.Default.SuperJumpCheckBoxSetting, "Debugger", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
 
         private void SemiBox_Checked(object sender, RoutedEventArgs e)
@@ -186,6 +226,10 @@ namespace FDJASVS_X_Bootstrapper
             Semi = true;
             Properties.Settings.Default.SemiCheckBoxSetting = true;
             Properties.Settings.Default.Save(); // Save the setting
+            if (Properties.Settings.Default.DevModeDebug)
+            {
+                MessageBox.Show("Set SemiCheckBoxSetting Setting To " + Properties.Settings.Default.SemiCheckBoxSetting, "Debugger", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
 
         private void SemiBox_Unchecked(object sender, RoutedEventArgs e)
@@ -193,6 +237,10 @@ namespace FDJASVS_X_Bootstrapper
             Semi = false;
             Properties.Settings.Default.SemiCheckBoxSetting = false;
             Properties.Settings.Default.Save(); // Save the setting
+            if (Properties.Settings.Default.DevModeDebug)
+            {
+                MessageBox.Show("Set SemiCheckBoxSetting Setting To " + Properties.Settings.Default.SemiCheckBoxSetting, "Debugger", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
 
 

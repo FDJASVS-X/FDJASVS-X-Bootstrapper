@@ -11,6 +11,7 @@
       d:DesignHeight="345" d:DesignWidth="460"
       Title="Hacks" Height="345" Width="460" Background="Blue">
 
+    
     <Grid>
         <ScrollViewer HorizontalAlignment="Left" Width="439" Margin="0,0,0,40" >
             <StackPanel Height="343">

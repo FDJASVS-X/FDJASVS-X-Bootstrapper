@@ -72,60 +72,100 @@ namespace FDJASVS_X_Bootstrapper
         {
             Properties.Settings.Default.ShadowsCheckBox = true;
             Properties.Settings.Default.Save();
+            if (Properties.Settings.Default.DevModeDebug)
+            {
+                MessageBox.Show("Set ShadowsCheckBox Setting To " + Properties.Settings.Default.ShadowsCheckBox, "Debugger", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
 
         private void ShadowsBox_Unchecked(object sender, RoutedEventArgs e)
         {
             Properties.Settings.Default.ShadowsCheckBox = false;
             Properties.Settings.Default.Save();
+            if (Properties.Settings.Default.DevModeDebug)
+            {
+                MessageBox.Show("Set ShadowsCheckBox Setting To " + Properties.Settings.Default.ShadowsCheckBox, "Debugger", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
 
         private void PlrShadowsBox_Checked(object sender, RoutedEventArgs e)
         {
             Properties.Settings.Default.PlrShadowsChck = true;
             Properties.Settings.Default.Save();
+            if (Properties.Settings.Default.DevModeDebug)
+            {
+                MessageBox.Show("Set PlrShadowsChck Setting To " + Properties.Settings.Default.PlrShadowsChck, "Debugger", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
 
         private void PlrShadowsBox_Unchecked(object sender, RoutedEventArgs e)
         {
             Properties.Settings.Default.PlrShadowsChck = false;
             Properties.Settings.Default.Save();
+            if (Properties.Settings.Default.DevModeDebug)
+            {
+                MessageBox.Show("Set PlrShadowsChck Setting To " + Properties.Settings.Default.PlrShadowsChck, "Debugger", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
 
         private void GMBox_Checked(object sender, RoutedEventArgs e)
         {
             Properties.Settings.Default.Gamm = true;
             Properties.Settings.Default.Save();
+            if (Properties.Settings.Default.DevModeDebug)
+            {
+                MessageBox.Show("Set Gamm Setting To " + Properties.Settings.Default.Gamm, "Debugger", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
 
         private void GMBox_Unchecked(object sender, RoutedEventArgs e)
         {
             Properties.Settings.Default.Gamm = false;
             Properties.Settings.Default.Save();
+            if (Properties.Settings.Default.DevModeDebug)
+            {
+                MessageBox.Show("Set Gamm Setting To " + Properties.Settings.Default.Gamm, "Debugger", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
 
         private void OldBox_Checked(object sender, RoutedEventArgs e)
         {
             Properties.Settings.Default.UseOldMaterials = true;
             Properties.Settings.Default.Save();
+            if (Properties.Settings.Default.DevModeDebug)
+            {
+                MessageBox.Show("Set UseOldMaterials Setting To " + Properties.Settings.Default.UseOldMaterials, "Debugger", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
 
         private void OldBox_Unchecked(object sender, RoutedEventArgs e)
         {
             Properties.Settings.Default.UseOldMaterials = false;
             Properties.Settings.Default.Save();
+            if (Properties.Settings.Default.DevModeDebug)
+            {
+                MessageBox.Show("Set UseOldMaterials Setting To " + Properties.Settings.Default.UseOldMaterials, "Debugger", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
 
         private void ftBox_Checked(object sender, RoutedEventArgs e)
         {
             Properties.Settings.Default.UseOldCharacterSounds = true;
             Properties.Settings.Default.Save();
+            if (Properties.Settings.Default.DevModeDebug)
+            {
+                MessageBox.Show("Set UseOldCharacterSounds Setting To " + Properties.Settings.Default.UseOldCharacterSounds, "Debugger", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
 
         private void ftBox_Unchecked(object sender, RoutedEventArgs e)
         {
             Properties.Settings.Default.UseOldCharacterSounds = false;
             Properties.Settings.Default.Save();
+            if (Properties.Settings.Default.DevModeDebug)
+            {
+                MessageBox.Show("Set UseOldCharacterSounds Setting To " + Properties.Settings.Default.UseOldCharacterSounds, "Debugger", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
 
 
@@ -136,22 +176,35 @@ namespace FDJASVS_X_Bootstrapper
             {
                 Properties.Settings.Default.Lightning = 0;
                 Properties.Settings.Default.Save();
-                
+                if (Properties.Settings.Default.DevModeDebug)
+                {
+                    MessageBox.Show("Set Lightning Setting To " + Properties.Settings.Default.Lightning, "Debugger", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+
             }
             else if(LightSettings.SelectedIndex == 1)
             {
                 Properties.Settings.Default.Lightning = 1;
                 Properties.Settings.Default.Save();
+                if (Properties.Settings.Default.DevModeDebug)
+                {
+                    MessageBox.Show("Set Lightning Setting To " + Properties.Settings.Default.Lightning, "Debugger", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
             }
            else if (LightSettings.SelectedIndex == 2)
             {
                 Properties.Settings.Default.Lightning = 2;
                 Properties.Settings.Default.Save();
+                if (Properties.Settings.Default.DevModeDebug)
+                {
+                    MessageBox.Show("Set Lightning Setting To " + Properties.Settings.Default.Lightning, "Debugger", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
             }
             else if (LightSettings.SelectedIndex == 3)
             {
                 Properties.Settings.Default.Lightning = 3;
                 Properties.Settings.Default.Save();
+                
             }
         }
         private void MouseComboBoxChange(object sender, RoutedEventArgs e)
@@ -160,17 +213,26 @@ namespace FDJASVS_X_Bootstrapper
             {
                 Properties.Settings.Default.MouserC = 0;
                 Properties.Settings.Default.Save();
+               
 
             }
             else if (Mouser.SelectedIndex == 1)
             {
                 Properties.Settings.Default.MouserC = 1;
                 Properties.Settings.Default.Save();
+                if (Properties.Settings.Default.DevModeDebug)
+                {
+                    MessageBox.Show("Set MouserC Setting To " + Properties.Settings.Default.MouserC, "Debugger", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
             }
             else if (Mouser.SelectedIndex == 2)
             {
                 Properties.Settings.Default.MouserC = 2;
                 Properties.Settings.Default.Save();
+                if (Properties.Settings.Default.DevModeDebug)
+                {
+                    MessageBox.Show("Set MouserC Setting To " + Properties.Settings.Default.MouserC, "Debugger", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
             }
         }
     }

@@ -10,6 +10,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="wrench-icon-2047x2048-jyerjpd9.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="ModernWPF" Version="1.4.6" />
     <PackageReference Include="ModernWpfUI" Version="0.9.6" />
   </ItemGroup>
@@ -18,6 +22,10 @@
     <Reference Include="BloxInstaller-DLL">
       <HintPath>..\..\..\..\Downloads\BloxInstaller-DLL.dll</HintPath>
     </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="wrench-icon-2047x2048-jyerjpd9.png" />
   </ItemGroup>
 
   <ItemGroup>

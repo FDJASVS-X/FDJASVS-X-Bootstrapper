@@ -15,13 +15,18 @@
     <Grid>
 
 
-        <StackPanel Margin="0,80,0,0" VerticalAlignment="Top" Height="222" >
+        <StackPanel Margin="0,80,0,0" VerticalAlignment="Top" Height="249" >
             <Button Content="Hacks" Height="75" FontFamily="Helvetica" FontSize="48" Background="#FFA7A6A6" Foreground="White" FontWeight="Light" Width="300" BorderBrush="Black" Click="Button_Click"/>
             <Button Content="Other" Height="75" FontFamily="Helvetica" FontSize="48" Background="#FFA7A6A6" Foreground="White" FontWeight="Light" Width="300" BorderBrush="Black" Click="Button_Click_1"/>
             <Button Content="Settings" Height="75" FontFamily="Helvetica" FontSize="48" Background="#FFA7A6A6" Foreground="White" FontWeight="Light" Width="300" BorderBrush="Black" Click="Button_Click_2"/>
+            <Button Content="Fast Flag Manager" Height="20" FontFamily="Helvetica" FontSize="14" Background="#FFA7A6A6" Foreground="White" FontWeight="Light" Width="150" BorderBrush="Black" Name="CustomFlagsButton" Click="Button_Click_2" Visibility="Hidden"/>
         </StackPanel>
 
-
+        <Button Margin="10,269,400,10" Background="Transparent" BorderBrush="Transparent" Click="DevModeClick" Name="DevModeBttn">
+            <Image Name="DevModeIMgs" Source="/wrench-icon-2047x2048-jyerjpd9.png">
+               
+            </Image>
+        </Button>
         <TextBlock TextWrapping="Wrap" Text="FDJASVS X Bootstrapper" Height="50" FontFamily="Helvetica" FontSize="36" VerticalAlignment="Top" Margin="7,10,7,0" Foreground="White" HorizontalAlignment="Center"/>
 
 

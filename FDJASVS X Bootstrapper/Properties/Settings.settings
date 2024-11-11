@@ -56,10 +56,13 @@
     <Setting Name="AutoUpdatePLS" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="DeveloperMode" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
     <Setting Name="Channel" Type="System.String" Scope="User">
       <Value Profile="(Default)">LIVE</Value>
     </Setting>
-    <Setting Name="DeveloperMode" Type="System.Boolean" Scope="User">
+    <Setting Name="DevModeDebug" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
   </Settings>
