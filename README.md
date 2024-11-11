@@ -1,11 +1,11 @@
 ![Image](Images/FDXBLogo.png)
 
 
-## Credits
+## 📝Credits📝
 
 [Bloxstrap](https://github.com/bloxstraplabs) - Inspiration
 
-# FDJASVS X Bootstrapper
+# 🔥FDJASVS X Bootstrapper🔥
 
   **FDJASVS X Bootstrapper** - A ROBLOX Modification Application That Saves your changes Everytime ROBLOX updates.
 
@@ -13,12 +13,12 @@
 
    Unfortunately, FDJASVS X Bootstrapper only Works on Windows and does not offer Support for MacOS, Linux Or Any Other Operating System. Apologies to any non-windows user out there.
 
-**For Clarification**
+**⚠️For Clarification⚠️**
 - Using FDJASVS X Bootstrapper will NOT get you banned as long as you do not use any of the hacking presets or change the ROBLOX Download Channel.
  - We also do NOT encourage you to use any of the hacking presets, if you do wanna use them, do it at Your Own Risk.
 - FDJASVS X Bootstrapper is NOT and will NOT be malware, We just want to offer you features that Bloxstrap doesn't.
 
-# TOP FEATURES
+# 🤩TOP FEATURES🤩
 - Multi-Instance Launching
    - Allows You To Launch Multiple Roblox Instances, Taking Ownership Of Their Mutex.
 - Change Channel[Developer Mode]
