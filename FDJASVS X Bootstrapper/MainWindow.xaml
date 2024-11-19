@@ -7,7 +7,7 @@
      
        
     mc:Ignorable="d"
-        Title="FDJASVS X Bootstrapper" Height="345" Width="460" Background="Blue">
+        Title="FDJASVS X Bootstrapper" Height="345" Width="460" Background="Blue" ResizeMode="NoResize">
     
    
     

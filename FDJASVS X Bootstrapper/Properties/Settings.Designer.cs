@@ -274,5 +274,17 @@ namespace FDJASVS_X_Bootstrapper.Properties {
                 this["DevModeDebug"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool BoxxSetting {
+            get {
+                return ((bool)(this["BoxxSetting"]));
+            }
+            set {
+                this["BoxxSetting"] = value;
+            }
+        }
     }
 }

@@ -173,8 +173,32 @@ namespace FDJASVS_X_Bootstrapper
             }
         }
 
+        private void Boxx_Checked(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.BoxxSetting = true;
+            Properties.Settings.Default.Save();
+            if (Properties.Settings.Default.DevModeDebug)
+            {
+                MessageBox.Show("Set BoxxSetting Setting To " + Properties.Settings.Default.BoxxSetting, "Debugger", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+        }
 
-       
+
+
+        private void Boxx_Unchecked(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.BoxxSetting = false;
+            Properties.Settings.Default.Save();
+            if (Properties.Settings.Default.DevModeDebug)
+            {
+                MessageBox.Show("Set BoxxSetting Setting To " + Properties.Settings.Default.BoxxSetting, "Debugger", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+        }
+
+
+
+
+
     }
 
 }

@@ -31,10 +31,10 @@ Title="Other" Height="345" Width="460" Background="Blue">
                             <TranslateTransform X="0" Y="280"/>
                         </TransformGroup>
                     </ComboBox.RenderTransform>
-                    <ui:DropDownButton x:Name="Voxel" Content="Voxel" FontFamily="Helvetica" />
-                    <ui:DropDownButton x:Name="ShadowMap" Content="ShadowMap" FontFamily="Helvetica"/>
-                    <ui:DropDownButton x:Name="Future" Content="Future" FontFamily="Helvetica"/>
-                    <ui:DropDownButton x:Name="Gamch" Content="Game's Choice" FontFamily="Helvetica" />
+                    <ComboBoxItem x:Name="Voxel" Content="Voxel" FontFamily="Helvetica" />
+                    <ComboBoxItem x:Name="ShadowMap" Content="ShadowMap" FontFamily="Helvetica"/>
+                    <ComboBoxItem x:Name="Future" Content="Future" FontFamily="Helvetica"/>
+                    <ComboBoxItem x:Name="Gamch" Content="Game's Choice" FontFamily="Helvetica" />
                 </ComboBox>
                 <ComboBox x:Name="Mouser" Width="375" Text="Default" FontFamily="Helvetica" IsEditable="True" IsReadOnly="True" FontSize="18" RenderTransformOrigin="0.5,0.5" SelectionChanged="MouseComboBoxChange">
                     <ComboBox.RenderTransform>
@@ -45,9 +45,9 @@ Title="Other" Height="345" Width="460" Background="Blue">
                             <TranslateTransform X="0" Y="285"/>
                         </TransformGroup>
                     </ComboBox.RenderTransform>
-                    <ui:DropDownButton x:Name="deftf" Content="Default Cursor" FontFamily="Helvetica" />
-                    <ui:DropDownButton x:Name="scursor" Content="2006 Cursor" FontFamily="Helvetica" />
-                    <ui:DropDownButton x:Name="tcursor" Content="2013 Cursor" FontFamily="Helvetica" />
+                    <ComboBoxItem x:Name="deftf" Content="Default Cursor" FontFamily="Helvetica" />
+                    <ComboBoxItem x:Name="scursor" Content="2006 Cursor" FontFamily="Helvetica" />
+                    <ComboBoxItem x:Name="tcursor" Content="2013 Cursor" FontFamily="Helvetica" />
                  
                 </ComboBox>
                

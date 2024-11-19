@@ -15,7 +15,6 @@
 
   <ItemGroup>
     <PackageReference Include="ModernWPF" Version="1.4.6" />
-    <PackageReference Include="ModernWpfUI" Version="0.9.6" />
   </ItemGroup>
 
   <ItemGroup>

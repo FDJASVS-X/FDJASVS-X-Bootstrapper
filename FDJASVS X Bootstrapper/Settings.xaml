@@ -11,7 +11,7 @@
     <Grid>
         <ScrollViewer HorizontalAlignment="Left" Width="439" Margin="0,0,0,40" >
 
-            <StackPanel Height="315">
+            <StackPanel Height="342">
                 <ToggleButton Content="X" Height="56" FontFamily="Helvetica" FontSize="48" Background="Red" Foreground="White" FontWeight="Light" Width="66" BorderBrush="Black" Checked="ToggleButton_Checked" RenderTransformOrigin="0.5,0.5" Panel.ZIndex="21">
                     <ToggleButton.RenderTransform>
                         <TransformGroup>
@@ -126,8 +126,36 @@
                             <TranslateTransform Y="10" X="30"/>
                         </TransformGroup>
                     </TextBlock.RenderTransform></TextBlock>
+                <CheckBox x:Name="QualityChangerBoxx" Content="" RenderTransformOrigin="0.5,0.5" Width="16" IsChecked="False" Checked="Boxx_Checked" Unchecked="Boxx_Unchecked">
+                    <CheckBox.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleY="2" ScaleX="2"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform X="-170" Y="30"/>
+                        </TransformGroup>
+                    </CheckBox.RenderTransform>
+                </CheckBox>
+                <TextBlock Text="Higher Quality Slider Alternative" Width="350" Height="16" FontFamily="Helvetica"  Foreground="White" FontWeight="Light" FontSize="16" RenderTransformOrigin="0.5,0.5"   >
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform Y="10" X="30"/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform></TextBlock>
+                <TextBlock Text="Explanation: 1-6 Are low graphics, Above 6 are high graphics" Width="350" Height="16" FontFamily="Helvetica"  Foreground="White" FontWeight="Light" FontSize="13" RenderTransformOrigin="0.5,0.5"   >
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform Y="10" X="30"/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform></TextBlock>
 
-               
+
 
 
             </StackPanel>

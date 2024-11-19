@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FDJASVS_X_Bootstrapper"
         mc:Ignorable="d"
-        Title="DevWindow" Height="345" Width="460" Background="Black">
+        Title="Developer Options" Height="345" Width="460" Background="Black">
     <Grid>
         <StackPanel>
             <TextBlock Text="Current Roblox Version: ERROR" Height="25" FontFamily="Helvetica"  Foreground="White" FontWeight="Light" FontSize="15" RenderTransformOrigin="0.5,0.5" Margin="-20,0,110,304" Name="DevRobloxVer"  >
