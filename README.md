@@ -18,6 +18,8 @@
 - To Enable Developer Mode, Click The Wrench Icon In FDJASVS X Bootstrapper's Main Window
   - I'd Also Like To Point Out That You Should Use Developer Mode With Caution, Some Of The Features In It Can Get You Banned. Have Fun! 
 - Unfortunately, FDJASVS X Bootstrapper only Works on Windows and does not offer Support for MacOS, Linux Or Any Other Operating System. Apologies to any non-windows user out there.
+- We Also Have A Roblox Studio Launcher, However As Of Now It Has no other Use Aside From Launching Roblox Studio via protocol.
+  - The Reason Why It's Ran With A Protocol Is Because Roblox Studio Often doesn't Work For Me, So I Have To Launch It Some Other Way.
 
 ## 🤩TOP FEATURES🤩
 - Multi-Instance Launching
