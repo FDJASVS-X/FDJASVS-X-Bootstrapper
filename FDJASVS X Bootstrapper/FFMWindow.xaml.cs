@@ -26,7 +26,7 @@ namespace FDJASVS_X_Bootstrapper
 
         private void AddFlagClick(object sender, RoutedEventArgs e)
         {
-
+            //e
         }
     }
 }
