@@ -26,3 +26,6 @@
    - Allows You To Launch Multiple Roblox Instances, Taking Ownership Of Their Mutex.
 - Change Channel[Developer Mode]
    - With this feature, you can now change The ROBLOX Download Channel[RISKY]
+- Fast Flag Manager
+   - Allows you to add non-preset fast flags.
+     - WE DO NOT TAKE RESPONSIBILITY FOR THESE
