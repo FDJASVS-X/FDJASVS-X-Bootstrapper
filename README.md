@@ -12,7 +12,7 @@
 
 ## ⚠️For Clarification⚠️
 - Using FDJASVS X Bootstrapper will NOT get you banned as long as you do not use any of the hacking presets or change the ROBLOX Download Channel.
-  - We also do NOT encourage you to use any of the hacking presets, if you do wanna use them, do it at Your Own Risk.
+  - We also do NOT encourage you to use some of the presets, if you do wanna use them, do it at Your Own Risk.
 - FDJASVS X Bootstrapper is NOT and will NOT be malware, We just want to offer you features that Bloxstrap doesn't.
   - BloxInstaller Is Also Safe. It Is Closed-Source, But You can Check FDJASVS X Bootstrapper's Source Code to see what commands does It Execute(search up `EmeraldGG` in the search bar) 
 - To Enable Developer Mode, Click The Wrench Icon In FDJASVS X Bootstrapper's Main Window
