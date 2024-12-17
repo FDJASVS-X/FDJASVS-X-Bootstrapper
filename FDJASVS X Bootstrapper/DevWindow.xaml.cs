@@ -42,6 +42,7 @@ namespace FDJASVS_X_Bootstrapper
             // Load saved settings and set the checkbox states
             ChannelsssTextBox.Text = Properties.Settings.Default.Channel;
             DebugModeCheckBox.IsChecked = Properties.Settings.Default.DevModeDebug;
+            DevModeCheckBox.IsChecked = Properties.Settings.Default.DeveloperMode;
         }
 
         private async void DevDownRoblox(object sender, RoutedEventArgs e)
@@ -71,10 +72,9 @@ namespace FDJASVS_X_Bootstrapper
                 BloxInstallerExecutables bloxInstallerExecutables = new BloxInstallerExecutables();
 
                 bloxInstallerExecutables.SetChannel();
-                MessageBoxResult result3 = MessageBox.Show("Do you want To re-download Roblox? This Is For Real Your Last Chance Before Consequences Could Happen. I warned you...", "Emerald", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
+                MessageBoxResult result3 = MessageBox.Show("Do you want To re-download Roblox? This Is For Real Your Last Chance Before something Could Happen. I warned you...", "Emerald", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
                 if (result3 == MessageBoxResult.Yes)
                 {
-                    MessageBox.Show("As you wish....", "BloxInstaller");
                     var method = typeof(BloxInstallerExecutables).GetMethod("DownloadRobloxTask", BindingFlags.NonPublic | BindingFlags.Instance);
                     await (Task)method.Invoke(bloxInstallerExecutables, null);
                 }
@@ -97,6 +97,36 @@ namespace FDJASVS_X_Bootstrapper
 
         private void DexBox_Unchecked(object sender, RoutedEventArgs e)
         {
+            Properties.Settings.Default.DevModeDebug = false;
+            Properties.Settings.Default.Save();
+        }
+
+        private void DevBox_Checked(object sender, RoutedEventArgs e)
+        {
+           
+            Properties.Settings.Default.DeveloperMode = true;
+            Properties.Settings.Default.Save();
+        }
+
+        private async void DevBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+
+           
+
+
+            MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
+            if (mainWindow != null)
+            {
+                mainWindow.CustomFlagsButton.Visibility = Visibility.Hidden;
+                mainWindow.Height = 345;
+            }
+
+            MessageBox.Show("Debug Mode Has Been Disabled", "FDJASVS X Bootstrapper", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+            MessageBox.Show("Developer Mode Has Been Disabled", "FDJASVS X Bootstrapper", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+
+
+            Properties.Settings.Default.DeveloperMode = false;
             Properties.Settings.Default.DevModeDebug = false;
             Properties.Settings.Default.Save();
         }

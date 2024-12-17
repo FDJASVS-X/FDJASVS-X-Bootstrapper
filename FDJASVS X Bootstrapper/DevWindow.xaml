@@ -36,22 +36,42 @@
 
             </Button>
 
-            <TextBlock Text="Debug Mode" Width="350" Height="29" FontFamily="Helvetica"  Foreground="White" FontWeight="Light" FontSize="24" RenderTransformOrigin="0.5,0.5" Margin="150,-395,0,0"   >
+            <TextBlock Text="Debug Mode" Width="350" Height="29" FontFamily="Helvetica" Foreground="White" FontWeight="Light" FontSize="24" RenderTransformOrigin="0.5,0.5" Margin="125,-395,0,0"   >
                 <TextBlock.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
                         <SkewTransform/>
                         <RotateTransform/>
-                        <TranslateTransform Y="10" X="30"/>
+                        <TranslateTransform Y="10" X="-70"/>
                     </TransformGroup>
                 </TextBlock.RenderTransform></TextBlock>
-            <CheckBox x:Name="DebugModeCheckBox" Content="" RenderTransformOrigin="1,1" Width="16" Checked="DexBox_Checked" IsChecked="False"  Unchecked="DexBox_Unchecked">
+            <CheckBox x:Name="DebugModeCheckBox" Content="" RenderTransformOrigin="1,1" Width="16" Checked="DexBox_Checked" IsChecked="False"  Unchecked="DexBox_Unchecked" Margin="-250,0,0,0">
                 <CheckBox.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform ScaleY="2" ScaleX="2"/>
                         <SkewTransform/>
                         <RotateTransform/>
                         <TranslateTransform X="-70" Y="-189"/>
+                    </TransformGroup>
+                </CheckBox.RenderTransform>
+            </CheckBox>
+
+            <TextBlock Text="Developer Mode" Width="350" Height="29" FontFamily="Helvetica" Foreground="White" FontWeight="Light" FontSize="18" RenderTransformOrigin="0.5,0.5" Margin="320,-420,0,0"   >
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="10" X="-70"/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform></TextBlock>
+            <CheckBox x:Name="DevModeCheckBox" Content="" RenderTransformOrigin="1,1" Width="16" Checked="DevBox_Checked" IsChecked="False"  Unchecked="DevBox_Unchecked" Margin="15,-15,0,0">
+                <CheckBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="2" ScaleX="2"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform X="0" Y="-189"/>
                     </TransformGroup>
                 </CheckBox.RenderTransform>
             </CheckBox>

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BloxInstaller_DLL;
 
 namespace FDJASVS_X_Bootstrapper
 {
@@ -70,6 +71,8 @@ namespace FDJASVS_X_Bootstrapper
 
         private void ShadowsBox_Checked(object sender, RoutedEventArgs e)
         {
+            // EmeraldGG.Quick("DFFlagDebugDrawBroadPhaseAABBs", "True");
+            EmeraldGG.QuickAddFlag("DFFlagDebugDrawBroadPhaseAABBs", "True");
             Properties.Settings.Default.ShadowsCheckBox = true;
             Properties.Settings.Default.Save();
             if (Properties.Settings.Default.DevModeDebug)
@@ -80,6 +83,8 @@ namespace FDJASVS_X_Bootstrapper
 
         private void ShadowsBox_Unchecked(object sender, RoutedEventArgs e)
         {
+
+            EmeraldGG.QuickRemoveFlag("DFFlagDebugDrawBroadPhaseAABBs");
             Properties.Settings.Default.ShadowsCheckBox = false;
             Properties.Settings.Default.Save();
             if (Properties.Settings.Default.DevModeDebug)

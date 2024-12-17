@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <RootNamespace>FDJASVS_X_Booting_Application</RootNamespace>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="emegg5555.png" />
+    <None Remove="FdXTitle.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="WPF-UI" Version="3.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FDJASVS X Bootstrapper\FDJASVS X Bootstrapper.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="BloxInstaller-DLL">
+      <HintPath>..\..\..\..\Desktop\BloxInstaller-DLL.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="emegg5555.png" />
+    <Resource Include="FdXTitle.png" />
+  </ItemGroup>
+
+</Project>

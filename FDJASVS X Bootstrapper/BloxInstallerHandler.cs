@@ -9,6 +9,7 @@ using BloxInstaller_DLL;
 using System.Windows.Controls;
 using System.Windows;
 using System.Reflection;
+using System.IO;
 
 namespace FDJASVS_X_Bootstrapper
 {
@@ -30,15 +31,16 @@ namespace FDJASVS_X_Bootstrapper
 
 
 
-     class BloxInstallerExecutables
+    class BloxInstallerExecutables
     {
-       
-        
+
+
         internal async Task DownloadRobloxTask()
         {
-          int DownloadRoblox = await EmeraldGG.InitializationAsync();
+            int DownloadRoblox = await EmeraldGG.InitializationAsync();
             if (DownloadRoblox == 1)
             {
+                File.WriteAllText(Path.Combine(Directory.GetCurrentDirectory(), "Versions", EmeraldGG.GetLatestVersion(), "ClientSettings", "ClientAppSettings.json"), Properties.Settings.Default.FastFlags);
                 if (Properties.Settings.Default.DevModeDebug == true)
                 {
                     MessageBox.Show("Roblox Downloaded/Updated Successfully", "Debugger");
@@ -53,7 +55,7 @@ namespace FDJASVS_X_Bootstrapper
             }
             else if (DownloadRoblox == 3)
             {
-                    MessageBox.Show("Something Went Wrong :( Please Try Again Or Report It On Our GitHub Repository", "EmeraldGG");
+                MessageBox.Show("Something Went Wrong :( Please Try Again Or Report It On Our GitHub Repository", "EmeraldGG");
             }
             else
             {
@@ -100,13 +102,13 @@ namespace FDJASVS_X_Bootstrapper
                 MessageBox.Show("Can't Identify Newest Roblox Version, Press OK To Check For Roblox...", "EmeraldGG");
                 DownloadRobloxTask();
 
-                
+
             }
         }
 
         internal async Task AddFlagTask(string name, string value)
         {
-            
+
 
             BloxInstallerExecutables bloxInstallerExecutables = new BloxInstallerExecutables();
 
@@ -133,7 +135,7 @@ namespace FDJASVS_X_Bootstrapper
             }
             else if (AddFlag == 4)
             {
-               
+
             }
             else
             {
@@ -161,7 +163,7 @@ namespace FDJASVS_X_Bootstrapper
             }
             else if (RemoveFlag == 4)
             {
-             
+
             }
             else
             {
@@ -175,6 +177,6 @@ namespace FDJASVS_X_Bootstrapper
     }
 
 
-    
+
 }
 
