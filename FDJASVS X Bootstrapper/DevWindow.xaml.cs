@@ -45,13 +45,7 @@ namespace FDJASVS_X_Bootstrapper
             DevModeCheckBox.IsChecked = Properties.Settings.Default.DeveloperMode;
         }
 
-        private async void DevDownRoblox(object sender, RoutedEventArgs e)
-        {
-            BloxInstallerExecutables bloxInstallerExecutables = new BloxInstallerExecutables();
-
-            var method = typeof(BloxInstallerExecutables).GetMethod("DownloadRobloxTask", BindingFlags.NonPublic | BindingFlags.Instance);
-            await(Task)method.Invoke(bloxInstallerExecutables, null);
-        }
+       
 
         private void ChannTextBoxFocus(object sender, RoutedEventArgs e)
         {

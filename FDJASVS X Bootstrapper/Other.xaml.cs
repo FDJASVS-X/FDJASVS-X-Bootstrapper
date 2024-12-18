@@ -24,14 +24,13 @@ namespace FDJASVS_X_Bootstrapper
         public Other()
         {
             InitializeComponent();
-            this.Loaded += Hacks_Loaded;
+            this.Loaded += Oter_Loaded;
         }
 
-        private void Hacks_Loaded(object sender, RoutedEventArgs e)
+        private void Oter_Loaded(object sender, RoutedEventArgs e)
         {
             // Load saved settings and set the checkbox states
             ShadowsCheckBox.IsChecked = Properties.Settings.Default.ShadowsCheckBox;
-            PlrShadowsCheckBox.IsChecked = Properties.Settings.Default.PlrShadowsChck;
             GamerThing.IsChecked = Properties.Settings.Default.Gamm;
             OldMaterialsCheckBox.IsChecked = Properties.Settings.Default.UseOldMaterials;
             LightSettings.SelectedIndex = Properties.Settings.Default.Lightning;
@@ -71,8 +70,7 @@ namespace FDJASVS_X_Bootstrapper
 
         private void ShadowsBox_Checked(object sender, RoutedEventArgs e)
         {
-            // EmeraldGG.Quick("DFFlagDebugDrawBroadPhaseAABBs", "True");
-            EmeraldGG.QuickAddFlag("DFFlagDebugDrawBroadPhaseAABBs", "True");
+            
             Properties.Settings.Default.ShadowsCheckBox = true;
             Properties.Settings.Default.Save();
             if (Properties.Settings.Default.DevModeDebug)
@@ -84,7 +82,6 @@ namespace FDJASVS_X_Bootstrapper
         private void ShadowsBox_Unchecked(object sender, RoutedEventArgs e)
         {
 
-            EmeraldGG.QuickRemoveFlag("DFFlagDebugDrawBroadPhaseAABBs");
             Properties.Settings.Default.ShadowsCheckBox = false;
             Properties.Settings.Default.Save();
             if (Properties.Settings.Default.DevModeDebug)
@@ -93,25 +90,8 @@ namespace FDJASVS_X_Bootstrapper
             }
         }
 
-        private void PlrShadowsBox_Checked(object sender, RoutedEventArgs e)
-        {
-            Properties.Settings.Default.PlrShadowsChck = true;
-            Properties.Settings.Default.Save();
-            if (Properties.Settings.Default.DevModeDebug)
-            {
-                MessageBox.Show("Set PlrShadowsChck Setting To " + Properties.Settings.Default.PlrShadowsChck, "Debugger", MessageBoxButton.OK, MessageBoxImage.Information);
-            }
-        }
-
-        private void PlrShadowsBox_Unchecked(object sender, RoutedEventArgs e)
-        {
-            Properties.Settings.Default.PlrShadowsChck = false;
-            Properties.Settings.Default.Save();
-            if (Properties.Settings.Default.DevModeDebug)
-            {
-                MessageBox.Show("Set PlrShadowsChck Setting To " + Properties.Settings.Default.PlrShadowsChck, "Debugger", MessageBoxButton.OK, MessageBoxImage.Information);
-            }
-        }
+      
+      
 
         private void GMBox_Checked(object sender, RoutedEventArgs e)
         {
@@ -172,6 +152,8 @@ namespace FDJASVS_X_Bootstrapper
                 MessageBox.Show("Set UseOldCharacterSounds Setting To " + Properties.Settings.Default.UseOldCharacterSounds, "Debugger", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
+
+        
 
 
 
@@ -238,6 +220,106 @@ namespace FDJASVS_X_Bootstrapper
                 {
                     MessageBox.Show("Set MouserC Setting To " + Properties.Settings.Default.MouserC, "Debugger", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
+            }
+        }
+
+        private async void SaveBtnO_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Do you want to save?", "FDJASVS X Bootstrapper", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    SaveBtnO.IsEnabled = false;
+                    if (Properties.Settings.Default.ShadowsCheckBox == true)
+                    {
+                        if (!EmeraldGG.CheckExistsFlag("FIntRenderShadowIntensity"))
+                        {
+                            await EmeraldGG.AddFlag("FIntRenderShadowIntensity", "0");
+                        }
+                    }
+                    else
+                    {
+                        await EmeraldGG.RemoveFlag("FIntRenderShadowIntensity");
+                    }
+
+                    if (Properties.Settings.Default.Gamm == true)
+                    {
+                        if (!EmeraldGG.CheckExistsFlag("FIntFRMMinGrassDistance") && !EmeraldGG.CheckExistsFlag("FIntFRMMaxGrassDistance") && !EmeraldGG.CheckExistsFlag("FIntRenderGrassDetailStrands") && !EmeraldGG.CheckExistsFlag("FIntRenderGrassHeightScaler"))
+                        {
+                            await EmeraldGG.AddFlag("FIntFRMMinGrassDistance", "0");
+                            await EmeraldGG.AddFlag("FIntFRMMaxGrassDistance", "0");
+                            await EmeraldGG.AddFlag("FIntRenderGrassDetailStrands", "0");
+                            await EmeraldGG.AddFlag("FIntRenderGrassHeightScaler", "0");
+                        }
+                    }
+                    else
+                    {
+                        await EmeraldGG.RemoveFlag("FIntFRMMinGrassDistance");
+                        await EmeraldGG.RemoveFlag("FIntFRMMaxGrassDistance");
+                        await EmeraldGG.RemoveFlag("FIntRenderGrassDetailStrands");
+                        await EmeraldGG.RemoveFlag("FIntRenderGrassHeightScaler");
+                    }
+
+                    if (Properties.Settings.Default.Lightning == 3)
+                    {
+                            await EmeraldGG.RemoveFlag("DFFlagDebugRenderForceTechnologyVoxel");
+                            await EmeraldGG.RemoveFlag("FFlagDebugForceFutureIsBrightPhase2");
+                            await EmeraldGG.RemoveFlag("FFlagDebugForceFutureIsBrightPhase3");
+
+                    }
+                    else if (Properties.Settings.Default.Lightning == 2)
+                    {
+                        if (!EmeraldGG.CheckExistsFlag("FFlagDebugForceFutureIsBrightPhase3"))
+                        {
+                            await EmeraldGG.AddFlag("FFlagDebugForceFutureIsBrightPhase3", "True");
+                            await EmeraldGG.RemoveFlag("DFFlagDebugRenderForceTechnologyVoxel");
+                            await EmeraldGG.RemoveFlag("FFlagDebugForceFutureIsBrightPhase2");
+                        }
+                    }
+                    else if (Properties.Settings.Default.Lightning == 1)
+                    {
+                        if (!EmeraldGG.CheckExistsFlag("FFlagDebugForceFutureIsBrightPhase2"))
+                        {
+                            await EmeraldGG.AddFlag("FFlagDebugForceFutureIsBrightPhase2", "True");
+                            await EmeraldGG.RemoveFlag("FFlagDebugForceFutureIsBrightPhase3");
+                            await EmeraldGG.RemoveFlag("DFFlagDebugRenderForceTechnologyVoxel");
+                        }
+                    }
+                    else if (Properties.Settings.Default.Lightning == 0)
+                    {
+                        if (!EmeraldGG.CheckExistsFlag("DFFlagDebugRenderForceTechnologyVoxel"))
+                        {
+                            await EmeraldGG.AddFlag("DFFlagDebugRenderForceTechnologyVoxel", "True");
+                            await EmeraldGG.RemoveFlag("FFlagDebugForceFutureIsBrightPhase3");
+                            await EmeraldGG.RemoveFlag("FFlagDebugForceFutureIsBrightPhase2");
+                        }
+                    }
+                    else
+                    {
+                        await EmeraldGG.RemoveFlag("DFFlagDebugRenderForceTechnologyVoxel");
+                        await EmeraldGG.RemoveFlag("FFlagDebugForceFutureIsBrightPhase2");
+                        await EmeraldGG.RemoveFlag("FFlagDebugForceFutureIsBrightPhase3");
+                    }
+
+                    MessageBox.Show("Saving Success!", "FDJASVS X Bootstrapper");
+
+
+
+
+                    await Task.Delay(15000);
+                    SaveBtnO.IsEnabled = true;
+
+
+                }
+                catch (Exception ex)
+                {
+                    SaveBtnO.IsEnabled = true;
+                    MessageBox.Show("Something went wrong during saving: \n" + "\n" + ex.Message + "\n" + "\nPlease Try Again or issue a bug on Our GitHub Repository", "FDJASVS X Bootstrapper", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+
+
             }
         }
     }

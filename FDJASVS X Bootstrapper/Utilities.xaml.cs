@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -44,7 +46,7 @@ namespace FDJASVS_X_Bootstrapper
             xrayCheckBox.IsChecked = Properties.Settings.Default.xrayCheckBoxSetting;
             SpeedHackCheckBox.IsChecked = Properties.Settings.Default.SpeedHackCheckBoxSetting;
             PSuperJumpCheckBox.IsChecked = Properties.Settings.Default.SuperJumpCheckBoxSetting;
-            SemiCheckBox.IsChecked = Properties.Settings.Default.SemiCheckBoxSetting;
+
             
         }
 
@@ -107,6 +109,10 @@ namespace FDJASVS_X_Bootstrapper
 
 
 
+       
+
+
+
         private void CircleBox_Checked(object sender, RoutedEventArgs e)
         {
            
@@ -161,7 +167,7 @@ namespace FDJASVS_X_Bootstrapper
 
         private void xrayBox_Checked(object sender, RoutedEventArgs e)
         {
-            SemiCheckBox.IsEnabled = false;
+         
            
             xray = true;
             Properties.Settings.Default.xrayCheckBoxSetting = true;
@@ -175,7 +181,7 @@ namespace FDJASVS_X_Bootstrapper
 
         private void xrayBox_Unchecked(object sender, RoutedEventArgs e)
         {
-            SemiCheckBox.IsEnabled = true;
+            
            
             xray = false;
             Properties.Settings.Default.xrayCheckBoxSetting = false;
@@ -238,32 +244,7 @@ namespace FDJASVS_X_Bootstrapper
 
         
 
-        private void SemiBox_Checked(object sender, RoutedEventArgs e)
-        {
-            xrayCheckBox.IsEnabled = false;
-           
-            Semi = true;
-            Properties.Settings.Default.SemiCheckBoxSetting = true;
-            Properties.Settings.Default.Save(); // Save the setting
-            if (Properties.Settings.Default.DevModeDebug)
-            {
-                MessageBox.Show("Set SemiCheckBoxSetting Setting To " + Properties.Settings.Default.SemiCheckBoxSetting, "Debugger", MessageBoxButton.OK, MessageBoxImage.Information);
-            }
-           
-        }
-
-        private void SemiBox_Unchecked(object sender, RoutedEventArgs e)
-        {
-            xrayCheckBox.IsEnabled = true;
-           
-            Semi = false;
-            Properties.Settings.Default.SemiCheckBoxSetting = false;
-            Properties.Settings.Default.Save(); // Save the setting
-            if (Properties.Settings.Default.DevModeDebug)
-            {
-                MessageBox.Show("Set SemiCheckBoxSetting Setting To " + Properties.Settings.Default.SemiCheckBoxSetting, "Debugger", MessageBoxButton.OK, MessageBoxImage.Information);
-            }
-        }
+      
 
         private async void SaveBtnU_Click(object sender, RoutedEventArgs e)
         {
@@ -272,84 +253,95 @@ namespace FDJASVS_X_Bootstrapper
 
             if (result == MessageBoxResult.Yes)
             {
+                try
+                {
 
-                SaveBtnU.IsEnabled = false;
-                if (Properties.Settings.Default.CircleCheckBoxSetting == true)
-                {
-                    EmeraldGG.QuickAddFlag("FFlagDebugAvatarChatVisualization", "True");
-                    EmeraldGG.QuickAddFlag("FFlagEnableInGameMenuChromeABTest2", "False");
-                }
-                else
-                {
-                    EmeraldGG.QuickRemoveFlag("FFlagDebugAvatarChatVisualization");
-                    EmeraldGG.QuickRemoveFlag("FFlagEnableInGameMenuChromeABTest2");
-                }
+                    SaveBtnU.IsEnabled = false;
+                    if (Properties.Settings.Default.CircleCheckBoxSetting == true)
+                    {
+                        if (!EmeraldGG.CheckExistsFlag("FFlagDebugAvatarChatVisualization") && !EmeraldGG.CheckExistsFlag("FFlagEnableInGameMenuChromeABTest2"))
+                        {
+                            await EmeraldGG.AddFlag("FFlagDebugAvatarChatVisualization", "True");
+                            await EmeraldGG.AddFlag("FFlagEnableInGameMenuChromeABTest2", "False");
+                        }
 
-                if (Properties.Settings.Default.OutlineCheckBoxSetting == true)
-                {
-                    EmeraldGG.QuickAddFlag("DFFlagDebugDrawBroadPhaseAABBs", "True");
-                }
-                else
-                {
-                    EmeraldGG.QuickRemoveFlag("DFFlagDebugDrawBroadPhaseAABBs");
-                }
+                    }
+                    else
+                    {
 
-                if (Properties.Settings.Default.xrayCheckBoxSetting == true)
-                {
-                    EmeraldGG.QuickAddFlag("FIntCameraFarZPlane", "1");
-                    EmeraldGG.QuickAddFlag("DFIntCullFactorPixelThresholdMainViewHighQuality", "1000");
-                    EmeraldGG.QuickAddFlag("DFIntCullFactorPixelThresholdShadowMapHighQuality", "10000");
-                    EmeraldGG.QuickAddFlag("DFIntCullFactorPixelThresholdShadowMapLowQuality", "10000");
-                }
-                else
-                {
-                    EmeraldGG.QuickRemoveFlag("FIntCameraFarZPlane");
-                    EmeraldGG.QuickRemoveFlag("DFIntCullFactorPixelThresholdMainViewHighQuality");
-                    EmeraldGG.QuickRemoveFlag("DFIntCullFactorPixelThresholdShadowMapHighQuality");
-                    EmeraldGG.QuickRemoveFlag("DFIntCullFactorPixelThresholdShadowMapLowQuality");
-                }
+                        await EmeraldGG.RemoveFlag("FFlagDebugAvatarChatVisualization");
+                        await EmeraldGG.RemoveFlag("FFlagEnableInGameMenuChromeABTest2");
+                    }
 
-                if (Properties.Settings.Default.SpeedHackCheckBoxSetting == true)
-                {
-                    EmeraldGG.QuickAddFlag("FFlagDebugSimIntegrationStabilityTesting", "true");
-                }
-                else
-                {
-                    EmeraldGG.QuickRemoveFlag("FFlagDebugSimIntegrationStabilityTesting");
-                }
+                    if (Properties.Settings.Default.OutlineCheckBoxSetting == true)
+                    {
+                        if (!EmeraldGG.CheckExistsFlag("DFFlagDebugDrawBroadPhaseAABBs"))
+                        {
+                            await EmeraldGG.AddFlag("DFFlagDebugDrawBroadPhaseAABBs", "True");
+                        }
+                    }
+                    else
+                    {
+                        await EmeraldGG.RemoveFlag("DFFlagDebugDrawBroadPhaseAABBs");
+                    }
 
-                if (Properties.Settings.Default.SuperJumpCheckBoxSetting == true)
-                {
-                    EmeraldGG.QuickAddFlag("DFIntNewRunningBaseGravityReductionFactorHundredth", "1500");
-                }
-                else
-                {
-                    EmeraldGG.QuickRemoveFlag("DFIntNewRunningBaseGravityReductionFactorHundredth");
-                }
+                    if (Properties.Settings.Default.xrayCheckBoxSetting == true)
+                    {
+                        if (!EmeraldGG.CheckExistsFlag("FIntCameraFarZPlane") && !EmeraldGG.CheckExistsFlag("DFIntCullFactorPixelThresholdMainViewHighQuality") && !EmeraldGG.CheckExistsFlag("DFIntCullFactorPixelThresholdShadowMapHighQuality") && !EmeraldGG.CheckExistsFlag("DFIntCullFactorPixelThresholdShadowMapLowQuality"))
+                        {
+                            await EmeraldGG.AddFlag("FIntCameraFarZPlane", "1");
+                            await EmeraldGG.AddFlag("DFIntCullFactorPixelThresholdMainViewHighQuality", "1000");
+                            await EmeraldGG.AddFlag("DFIntCullFactorPixelThresholdShadowMapHighQuality", "10000");
+                            await EmeraldGG.AddFlag("DFIntCullFactorPixelThresholdShadowMapLowQuality", "10000");
+                        }
+                    }
+                    else
+                    {
+                        await EmeraldGG.RemoveFlag("FIntCameraFarZPlane");
+                        await EmeraldGG.RemoveFlag("DFIntCullFactorPixelThresholdMainViewHighQuality");
+                        await EmeraldGG.RemoveFlag("DFIntCullFactorPixelThresholdShadowMapHighQuality");
+                        await EmeraldGG.RemoveFlag("DFIntCullFactorPixelThresholdShadowMapLowQuality");
+                    }
 
-                if (Properties.Settings.Default.SemiCheckBoxSetting == true)
-                {
-                    EmeraldGG.QuickAddFlag("FFlagFastGPULightCulling3", "True");
-                    EmeraldGG.QuickAddFlag("FIntRenderShadowIntensity", "0");
-                    EmeraldGG.QuickAddFlag("DFIntCullFactorPixelThresholdShadowMapHighQuality", "2147483647");
-                    EmeraldGG.QuickAddFlag("DFIntCullFactorPixelThresholdShadowMapLowQuality", "2147483647");
-                    EmeraldGG.QuickAddFlag("FFlagNewLightAttenuation", "True");
-                    EmeraldGG.QuickAddFlag("FIntRenderShadowmapBias", "-1");
-                    EmeraldGG.QuickAddFlag("DFFlagDebugPauseVoxelizer", "True");
-                }
-                else
-                {
-                    EmeraldGG.QuickRemoveFlag("FFlagFastGPULightCulling3");
-                    EmeraldGG.QuickRemoveFlag("FIntRenderShadowIntensity");
-                    EmeraldGG.QuickRemoveFlag("DFIntCullFactorPixelThresholdShadowMapHighQuality");
-                    EmeraldGG.QuickRemoveFlag("DFIntCullFactorPixelThresholdShadowMapLowQuality");
-                    EmeraldGG.QuickRemoveFlag("FFlagNewLightAttenuation");
-                    EmeraldGG.QuickRemoveFlag("FIntRenderShadowmapBias");
-                    EmeraldGG.QuickRemoveFlag("DFFlagDebugPauseVoxelizer");
-                }
+                    if (Properties.Settings.Default.SpeedHackCheckBoxSetting == true)
+                    {
+                        if (!EmeraldGG.CheckExistsFlag("FFlagDebugSimIntegrationStabilityTesting"))
+                        {
+                            await EmeraldGG.AddFlag("FFlagDebugSimIntegrationStabilityTesting", "true");
+                        }
+                    }
+                    else
+                    {
+                        await EmeraldGG.RemoveFlag("FFlagDebugSimIntegrationStabilityTesting");
+                    }
 
-                await Task.Delay(15000);
-                SaveBtnU.IsEnabled = false;
+                    if (Properties.Settings.Default.SuperJumpCheckBoxSetting == true)
+                    {
+                        if (!EmeraldGG.CheckExistsFlag("DFIntNewRunningBaseGravityReductionFactorHundredth"))
+                        {
+                            await EmeraldGG.AddFlag("DFIntNewRunningBaseGravityReductionFactorHundredth", "1500");
+                        }
+                    }
+                    else
+                    {
+                        await EmeraldGG.RemoveFlag("DFIntNewRunningBaseGravityReductionFactorHundredth");
+                    }
+
+                   
+
+                    MessageBox.Show("Saving Success!", "FDJASVS X Bootstrapper");
+                    SaveBtnU.IsEnabled = false;
+
+
+                    await Task.Delay(15000);
+                    SaveBtnU.IsEnabled = true;
+                }
+                catch (Exception ex)
+                {
+                    SaveBtnU.IsEnabled = true;
+                    MessageBox.Show("Something went wrong during saving: \n" + "\n" + ex.Message + "\n" + "\nPlease Try Again or issue a bug on Our GitHub Repository", "FDJASVS X Bootstrapper", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+                
             }
         }
     }

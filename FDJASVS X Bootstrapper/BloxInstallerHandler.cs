@@ -55,7 +55,7 @@ namespace FDJASVS_X_Bootstrapper
             }
             else if (DownloadRoblox == 3)
             {
-                MessageBox.Show("Something Went Wrong :( Please Try Again Or Report It On Our GitHub Repository", "EmeraldGG");
+                MessageBox.Show("Something Went Wrong(most likely caused by a request timeout). Please Try Again Or Report It On Our GitHub Repository", "EmeraldGG");
             }
             else
             {

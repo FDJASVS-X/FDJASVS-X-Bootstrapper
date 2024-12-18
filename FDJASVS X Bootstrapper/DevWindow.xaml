@@ -17,7 +17,6 @@
                         <TranslateTransform Y="10" X="30"/>
                     </TransformGroup>
                 </TextBlock.RenderTransform></TextBlock>
-            <Button Content="Download/Update Roblox" Height="26" FontFamily="Helvetica" FontSize="6.2" Background="#FFA7A6A6" Foreground="White" FontWeight="Light" Width="75" BorderBrush="Black" Click="DevDownRoblox" Margin="0,-620,-360,0"/>
             <TextBlock Text="Channel:" Width="350" Height="40" FontFamily="Helvetica"  Foreground="White" FontWeight="Light" FontSize="30" RenderTransformOrigin="0.5,0.5" Margin="-150,-650,0,-75"   >
                 <TextBlock.RenderTransform>
                     <TransformGroup>

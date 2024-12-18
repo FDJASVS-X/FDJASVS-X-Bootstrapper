@@ -11,7 +11,7 @@ Title="Other" Height="345" Width="460" Background="Blue">
 
     <Grid>
         <ScrollViewer HorizontalAlignment="Left" Width="439" Margin="0,0,0,40" >
-            <StackPanel Height="450">
+            <StackPanel Height="305">
                 <ToggleButton Content="X" Height="56" FontFamily="Helvetica" FontSize="48" Background="Red" Foreground="White" FontWeight="Light" Width="66" BorderBrush="Black" Checked="ToggleButton_Checked" RenderTransformOrigin="0.5,0.5" Panel.ZIndex="21">
                     <ToggleButton.RenderTransform>
                         <TransformGroup>
@@ -28,7 +28,7 @@ Title="Other" Height="345" Width="460" Background="Blue">
                             <ScaleTransform/>
                             <SkewTransform/>
                             <RotateTransform/>
-                            <TranslateTransform X="0" Y="280"/>
+                            <TranslateTransform X="0" Y="100"/>
                         </TransformGroup>
                     </ComboBox.RenderTransform>
                     <ComboBoxItem x:Name="Voxel" Content="Voxel" FontFamily="Helvetica" />
@@ -36,7 +36,7 @@ Title="Other" Height="345" Width="460" Background="Blue">
                     <ComboBoxItem x:Name="Future" Content="Future" FontFamily="Helvetica"/>
                     <ComboBoxItem x:Name="Gamch" Content="Game's Choice" FontFamily="Helvetica" />
                 </ComboBox>
-                <ComboBox x:Name="Mouser" Width="375" Text="Default" FontFamily="Helvetica" IsEditable="True" IsReadOnly="True" FontSize="18" RenderTransformOrigin="0.5,0.5" SelectionChanged="MouseComboBoxChange">
+                <ComboBox Visibility="Collapsed" x:Name="Mouser" Width="375" Text="Default" FontFamily="Helvetica" IsEditable="True" IsReadOnly="True" FontSize="18" RenderTransformOrigin="0.5,0.5" SelectionChanged="MouseComboBoxChange">
                     <ComboBox.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -57,7 +57,7 @@ Title="Other" Height="345" Width="460" Background="Blue">
                             <ScaleTransform ScaleY="2" ScaleX="2"/>
                             <SkewTransform/>
                             <RotateTransform/>
-                            <TranslateTransform X="-150" Y="-29"/>
+                            <TranslateTransform X="-150" Y="-15"/>
                         </TransformGroup>
                     </CheckBox.RenderTransform>
                 </CheckBox>
@@ -67,28 +67,10 @@ Title="Other" Height="345" Width="460" Background="Blue">
                             <ScaleTransform/>
                             <SkewTransform/>
                             <RotateTransform/>
-                            <TranslateTransform Y="-50" X="63"/>
+                            <TranslateTransform Y="-35" X="63"/>
                         </TransformGroup>
                     </TextBlock.RenderTransform></TextBlock>
-                <CheckBox x:Name="PlrShadowsCheckBox" Content="" RenderTransformOrigin="0.5,0.5" Width="16" IsChecked="False" Checked="PlrShadowsBox_Checked" Unchecked="PlrShadowsBox_Unchecked">
-                    <CheckBox.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform ScaleY="2" ScaleX="2"/>
-                            <SkewTransform/>
-                            <RotateTransform/>
-                            <TranslateTransform X="-150" Y="-20"/>
-                        </TransformGroup>
-                    </CheckBox.RenderTransform>
-                </CheckBox>
-                <TextBlock Text="Disable Player Shadows" Width="350" Height="28" FontFamily="Helvetica"  Foreground="White" FontWeight="Light" FontSize="24" RenderTransformOrigin="0.5,0.5"   >
-                    <TextBlock.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform/>
-                            <TranslateTransform Y="-40" X="63"/>
-                        </TransformGroup>
-                    </TextBlock.RenderTransform></TextBlock>
+                
                 <CheckBox x:Name="GamerThing" Content="" RenderTransformOrigin="0.5,0.5" Width="16" IsChecked="False" Checked="GMBox_Checked" Unchecked="GMBox_Unchecked" ToolTip="every gamer needs this">
                     <CheckBox.RenderTransform>
                         <TransformGroup>
@@ -108,7 +90,7 @@ Title="Other" Height="345" Width="460" Background="Blue">
                             <TranslateTransform Y="-35" X="63"/>
                         </TransformGroup>
                     </TextBlock.RenderTransform></TextBlock>
-                <CheckBox x:Name="OldMaterialsCheckBox" Content="" RenderTransformOrigin="0.5,0.5" Width="16" IsChecked="False" Checked="OldBox_Checked" Unchecked="OldBox_Unchecked" ToolTip="If Set To False, It'll Be Up To The Game Which Materials They Use ">
+                <CheckBox x:Name="OldMaterialsCheckBox" Content="" Visibility="Collapsed" RenderTransformOrigin="0.5,0.5" Width="16" IsChecked="False" Checked="OldBox_Checked" Unchecked="OldBox_Unchecked" ToolTip="If Set To False, It'll Be Up To The Game Which Materials They Use ">
                     <CheckBox.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform ScaleY="2" ScaleX="2"/>
@@ -118,7 +100,7 @@ Title="Other" Height="345" Width="460" Background="Blue">
                         </TransformGroup>
                     </CheckBox.RenderTransform>
                 </CheckBox>
-                <TextBlock Text="Use 2022 Materials" Width="350" Height="28" FontFamily="Helvetica"  Foreground="White" FontWeight="Light" FontSize="24" RenderTransformOrigin="0.5,0.5"   >
+                <TextBlock Visibility="Collapsed" Text="Use 2022 Materials" Width="350" Height="28" FontFamily="Helvetica"  Foreground="White" FontWeight="Light" FontSize="24" RenderTransformOrigin="0.5,0.5"   >
                     <TextBlock.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -127,25 +109,17 @@ Title="Other" Height="345" Width="460" Background="Blue">
                             <TranslateTransform Y="-32" X="63"/>
                         </TransformGroup>
                     </TextBlock.RenderTransform></TextBlock>
-                <CheckBox x:Name="ftchs" Content="" RenderTransformOrigin="0.5,0.5" Width="16" IsChecked="False" Checked="ftBox_Checked" Unchecked="ftBox_Unchecked" ToolTip="If Set To False, It'll Be Up To The Game Which Materials They Use ">
-                    <CheckBox.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform ScaleY="2" ScaleX="2"/>
-                            <SkewTransform/>
-                            <RotateTransform/>
-                            <TranslateTransform X="-150" Y="-10"/>
-                        </TransformGroup>
-                    </CheckBox.RenderTransform>
-                </CheckBox>
-                <TextBlock Text="Use 2014 Character Sounds" Width="350" Height="28" FontFamily="Helvetica"  Foreground="White" FontWeight="Light" FontSize="24" RenderTransformOrigin="0.5,0.5"   >
-                    <TextBlock.RenderTransform>
+
+                <Button Content="Save" Background="#FFA7A6A6" BorderBrush="Black" Foreground="White" Name="SaveBtnO" FontWeight="Light" FontFamily="Helvetica" Width="210" Height="17" RenderTransformOrigin="0.5,0.5" Click="SaveBtnO_Click">
+                    <Button.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
                             <SkewTransform/>
                             <RotateTransform/>
-                            <TranslateTransform Y="-32" X="63"/>
+                            <TranslateTransform Y="25"/>
                         </TransformGroup>
-                    </TextBlock.RenderTransform></TextBlock>
+                    </Button.RenderTransform>
+                </Button>
 
             </StackPanel>
 

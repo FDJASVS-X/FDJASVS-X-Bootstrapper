@@ -45,6 +45,10 @@ namespace FDJASVS_X_Bootstrapper
         {
             if (await EmeraldGG.InitializationAsync() == 1)
             {
+                if (!Path.Exists(Path.Combine(Directory.GetCurrentDirectory(), "FastFlags.txt")))
+                {
+                    File.Create(Path.Combine(Directory.GetCurrentDirectory(), "FastFlags.txt")).Close();
+                }
                 File.WriteAllText(Path.Combine(Directory.GetCurrentDirectory(), "Versions", EmeraldGG.GetLatestVersion(), "ClientSettings", "ClientAppSettings.json"), File.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(), "FastFlags.txt")));
             }
             else
@@ -62,6 +66,7 @@ namespace FDJASVS_X_Bootstrapper
                 Properties.Settings.Default.Save();
             };
         }
+
 
 
 
