@@ -1,5 +1,8 @@
 ![Image](Images/FDXBLogo.png)
 
+> [!CAUTION]
+> https://fdjasvs-x.github.io/FDJASVS-X/ and this GitHub Repository are the only places you should download FDJASVS X Bootstrapper from, we do not take responsibility for downloading it from other sources.
+
 # 🔥FDJASVS X Bootstrapper🔥
 
   **FDJASVS X Bootstrapper** - A ROBLOX Modification Application That Saves your changes Everytime ROBLOX updates.
