@@ -14,21 +14,6 @@ using System.IO;
 namespace FDJASVS_X_Bootstrapper
 {
 
-    class GGStorage
-    {
-        public String[] Lightningfflags = { /* Voxel Lighting (Phase 1) */ "@\r\n{\r\n    \"DFFlagDebugRenderForceTechnologyVoxel\": \"True\"\r\n}", /* Shadowmap Lighting (Phase 2) */ "@{\r\n    \"FFlagDebugForceFutureIsBrightPhase2\": \"True\"\r\n}", /* Future Lighting (Phase 3)) */ "@{\r\n    \"FFlagDebugForceFutureIsBrightPhase3\": \"True\"\r\n}", /* Disable Shadows */ "@{\r\n    \"FIntRenderShadowIntensity\": \"0\"\r\n}" };
-        public String[] Hackfflags = { /* Draws a circle under avatars */ "@{\r\n    \"FFlagDebugAvatarChatVisualization\": \"True\",\r\n    \"FFlagEnableInGameMenuChromeABTest2\": \"False\"\r\n}" };
-
-        // Personal FFlags
-        public String[] PLightningfflags = { /* Disable Player Shadows */ "@{\r\n    \"FIntRenderShadowIntensity\": \"0\"\r\n}" };
-
-        public String[] Weirdfflags = { /* Draws an outline around every part and every humanoid */ "@{\r\n    \"DFFlagDebugDrawBroadPhaseAABBs\": \"True\"\r\n}", /* xray(buggy) */ "@{\r\n   \"FIntCameraFarZPlane\": \"1\"\r\n    \"DFIntCullFactorPixelThresholdMainViewHighQuality\": \"10000\",\r\n    \"DFIntCullFactorPixelThresholdMainViewLowQuality\": \"10000\",\r\n    \"DFIntCullFactorPixelThresholdShadowMapHighQuality\": \"10000\",\r\n    \"DFIntCullFactorPixelThresholdShadowMapLowQuality\": \"10000\"\r\n}", /* SpeedHack */ "@{\r\n\"FFlagDebugSimIntegrationStabilityTesting\": true\r\n}", /* Possible Super Jump */ "@{\r\n    \"DFIntNewRunningBaseGravityReductionFactorHundredth\": \"1500\"\r\n}\r\n", /* Remove Grass(every gamer needs this) */ "@{\r\n    \"FIntFRMMinGrassDistance\": \"0\",\r\n    \"FIntFRMMaxGrassDistance\": \"0\",\r\n    \"FIntRenderGrassDetailStrands\": \"0\",\r\n    \"FIntRenderGrassHeightScaler\": \"0\"\r\n}", /* Semi Fullbright */ "@{\r\n    \"FFlagFastGPULightCulling3\": \"True\",\r\n    \"FIntRenderShadowIntensity\": \"0\",\r\n    \"DFIntCullFactorPixelThresholdShadowMapHighQuality \": \"2147483647\",\r\n    \"DFIntCullFactorPixelThresholdShadowMapLowQuality\": \"2147483647\",\r\n    \"FFlagNewLightAttenuation\": \"True\",\r\n    \"FIntRenderShadowmapBias\": \"-1\",\r\n    \"DFFlagDebugPauseVoxelizer\": \"True\"\r\n}" };
-
-        public String[] EscapeMenufflags = { /* Default */ "@{ \"DisableV2\", null },\r\n                    { \"EnableV4\", null },\r\n                    { \"ABTest\", null }",  /* Version 1(2015) */ "@  { \"DisableV2\", \"True\" },\r\n                    { \"EnableV4\", \"False\" },\r\n                    { \"ABTest\", \"False\" }", /* Version 2 (2020) */ "@{ \"DisableV2\", \"False\" },\r\n                    { \"EnableV4\", \"False\" },\r\n                    { \"ABTest\", \"False\" }", /* Version 4 (2023) */ "@{ \"DisableV2\", \"True\" },\r\n                    { \"EnableV4\", \"True\" },\r\n                    { \"ABTest\", \"False\" }" };
-
-
-    }
-
 
 
     class BloxInstallerExecutables
@@ -40,6 +25,7 @@ namespace FDJASVS_X_Bootstrapper
             int DownloadRoblox = await EmeraldGG.InitializationAsync();
             if (DownloadRoblox == 1)
             {
+                // Success
                 File.WriteAllText(Path.Combine(Directory.GetCurrentDirectory(), "Versions", EmeraldGG.GetLatestVersion(), "ClientSettings", "ClientAppSettings.json"), Properties.Settings.Default.FastFlags);
                 if (Properties.Settings.Default.DevModeDebug == true)
                 {
@@ -48,6 +34,7 @@ namespace FDJASVS_X_Bootstrapper
             }
             else if (DownloadRoblox == 2)
             {
+                // Already Installed
                 if (Properties.Settings.Default.DevModeDebug == true)
                 {
                     MessageBox.Show("Roblox Already Installed", "Debugger", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -55,7 +42,8 @@ namespace FDJASVS_X_Bootstrapper
             }
             else if (DownloadRoblox == 3)
             {
-                MessageBox.Show("Something Went Wrong(most likely caused by a request timeout). Please Try Again Or Report It On Our GitHub Repository", "EmeraldGG");
+                // Error
+                MessageBox.Show("Something Went Wrong. Please Try Again Or Report It On Our GitHub Repository", "EmeraldGG");
             }
             else
             {
@@ -86,7 +74,7 @@ namespace FDJASVS_X_Bootstrapper
             }
             else
             {
-                MessageBox.Show("Something Went Wrong :(", "EmeraldGG");
+                MessageBox.Show("Something Went Wrong :(", "EmeraldGG"); // Error
             }
         }
 
@@ -117,7 +105,7 @@ namespace FDJASVS_X_Bootstrapper
             var AddFlag = await EmeraldGG.AddFlag(name, value);
             if (AddFlag == 1)
             {
-
+                // Success
             }
             else if (AddFlag == 2)
             {
@@ -151,7 +139,7 @@ namespace FDJASVS_X_Bootstrapper
             var RemoveFlag = await EmeraldGG.RemoveFlag(name);
             if (RemoveFlag == 1)
             {
-
+                // Success
             }
             else if (RemoveFlag == 2)
             {

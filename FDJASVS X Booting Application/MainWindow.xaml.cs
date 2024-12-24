@@ -7,10 +7,12 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 using FDJASVS_X_Bootstrapper;
 using Wpf.Ui.Controls;
 using BloxInstaller_DLL;
+using System.Diagnostics;
+using System.IO;
+using System.Reflection;
 
 namespace FDJASVS_X_Booting_Application
 {
@@ -25,48 +27,53 @@ namespace FDJASVS_X_Booting_Application
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
 
 
-            FlagCheck();
 
+
+
+            LoadMultiInstancer();
 
         }
 
-        public async void FlagCheck()
+        public async static void LoadMultiInstancer()
+        {
+            int DownloadRoblox = await EmeraldGG.InitializationAsync();
+            await GetMultInstancer();
+        }
+
+
+        public async static Task<int> GetMultInstancer()
         {
 
+            if (!Path.Exists(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "MultiInstance.txt")))
+            {
+                File.Create(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "MultiInstance.txt")).Close();
+                File.WriteAllText(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "MultiInstance.txt"), "false");
+            }
 
-          
+            if (File.ReadAllText(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "MultiInstance.txt")) == "true")
+            {
+                Process[] processes = Process.GetProcessesByName("MultiInstancer");
+                if (processes.Length > 0)
+                {
+                    return 1;
+                }
+                else
+                {
+                    Process.Start(new ProcessStartInfo().FileName = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\MultiInstancer.exe");
+                    return 2;
+                }
+            }
+            else
+            {
+                Process[] processes = Process.GetProcessesByName("MultiInstancer.exe");
+                foreach (Process process in processes)
+                {
+                    process.Kill();
+                }
+                return 3;
+            }
 
-           var DownloadRoblox = await EmeraldGG.InitializationAsync();
-
-           var CleanFlags = await EmeraldGG.ClearAllFlags();
-
-                    if (FDJASVS_X_Bootstrapper.Properties.Settings.Default.CircleCheckBoxSetting == true)
-                    {
-                        var AddFlag = await EmeraldGG.AddFlag("DFFlagDebugDrawBroadPhaseAABBs", "True");
-                        if (AddFlag == 1)
-                        {
-                            System.Windows.MessageBox.Show("Success", "ye");
-                        }
-                        else if (AddFlag == 2)
-                        {
-                            System.Windows.MessageBox.Show("Roblox Not Installed", ":(");
-                        }
-                        else if (AddFlag == 3)
-                        {
-                            System.Windows.MessageBox.Show("Failure", "Sad :(((((");
-                        }
-                        else if (AddFlag == 4)
-                        {
-                            System.Windows.MessageBox.Show("Value Replaced Succesfully", "ye");
-                        }
-                        else
-                        {
-                            System.Windows.MessageBox.Show("Unknown Error", "🥶");
-                        }
-
-              
-                    }
-               
         }
+
     }
 }

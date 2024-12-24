@@ -66,7 +66,7 @@ namespace FDJASVS_X_Bootstrapper
                 BloxInstallerExecutables bloxInstallerExecutables = new BloxInstallerExecutables();
 
                 bloxInstallerExecutables.SetChannel();
-                MessageBoxResult result3 = MessageBox.Show("Do you want To re-download Roblox? This Is For Real Your Last Chance Before something Could Happen. I warned you...", "Emerald", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
+                MessageBoxResult result3 = MessageBox.Show("Do you want To re-download Roblox?", "Emerald", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
                 if (result3 == MessageBoxResult.Yes)
                 {
                     var method = typeof(BloxInstallerExecutables).GetMethod("DownloadRobloxTask", BindingFlags.NonPublic | BindingFlags.Instance);

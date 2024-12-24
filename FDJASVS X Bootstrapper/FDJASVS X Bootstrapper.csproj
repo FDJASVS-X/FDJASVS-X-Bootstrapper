@@ -7,10 +7,15 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>FDJASVSXLOGOFINAL2.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="wrench-icon-2047x2048-jyerjpd9.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="FDJASVSXLOGOFINAL2.ico" />
   </ItemGroup>
 
   <ItemGroup>

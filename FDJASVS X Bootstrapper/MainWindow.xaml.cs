@@ -43,6 +43,8 @@ namespace FDJASVS_X_Bootstrapper
 
         public async static void DoFastFlagLoading()
         {
+            //MessageBox.Show("Crazy");
+            EmeraldGG.RegisterPlayer();
             if (await EmeraldGG.InitializationAsync() == 1)
             {
                 if (!Path.Exists(Path.Combine(Directory.GetCurrentDirectory(), "FastFlags.txt")))

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -13,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BloxInstaller_DLL;
 
 namespace FDJASVS_X_Bootstrapper
 {
@@ -35,9 +37,10 @@ namespace FDJASVS_X_Bootstrapper
             OldDeathCheckBox.IsChecked = Properties.Settings.Default.OldDeathSoundS;
             OldAvatarModelSwapCheckBox.IsChecked = Properties.Settings.Default.OldAvatarBack;
             AutoUpdateCheckBox.IsChecked = Properties.Settings.Default.AutoUpdatePLS;
+            QualityChangerBoxx.IsChecked = Properties.Settings.Default.BoxxSetting;
         }
 
-        
+
 
         private void ToggleButton_Checked(object sender, RoutedEventArgs e)
         {
@@ -195,10 +198,43 @@ namespace FDJASVS_X_Bootstrapper
             }
         }
 
+        private async void SaveBtnS_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Do you want to save?", "FDJASVS X Bootstrapper", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
+            if (result == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    if (Properties.Settings.Default.BoxxSetting == true)
+                    {
+                        if (!EmeraldGG.CheckExistsFlag("DFIntDebugFRMQualityLevelOverride"))
+                        {
+                            await EmeraldGG.AddFlag("DFIntDebugFRMQualityLevelOverride", "1");
+                        }
+                    }
+                    else
+                    {
+                        await EmeraldGG.RemoveFlag("DFIntDebugFRMQualityLevelOverride");
+                    }
 
+                    if (Properties.Settings.Default.MultiInstanceLaunchingSetting == true)
+                    {
+                       File.WriteAllText(System.IO.Path.Combine(Directory.GetCurrentDirectory(), "MultiInstance.txt"), "true");
+                    }
+                    else
+                    {
+                        File.WriteAllText(System.IO.Path.Combine(Directory.GetCurrentDirectory(), "MultiInstance.txt"), "false");
+                    }
 
+                    MessageBox.Show("Saving Success!", "FDJASVS X Bootstrapper");
 
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Something went wrong during saving: \n" + "\n" + ex.Message + "\n" + "\nPlease Try Again or issue a bug on Our GitHub Repository", "FDJASVS X Bootstrapper", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+            }
+        }
     }
-
 }

@@ -7,11 +7,16 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>FDJASVSXLOGOFINAL2.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="emegg5555.png" />
     <None Remove="FdXTitle.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="FDJASVSXLOGOFINAL2.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -31,6 +36,10 @@
   <ItemGroup>
     <Resource Include="emegg5555.png" />
     <Resource Include="FdXTitle.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\PublishProfiles\" />
   </ItemGroup>
 
 </Project>
