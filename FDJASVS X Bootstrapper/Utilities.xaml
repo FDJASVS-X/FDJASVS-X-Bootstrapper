@@ -83,44 +83,7 @@
                             <TranslateTransform Y="10" X="30"/>
                         </TransformGroup>
                     </TextBlock.RenderTransform></TextBlock>
-                <CheckBox x:Name="SpeedHackCheckBox" Content="" RenderTransformOrigin="0.5,0.5" Width="16" IsChecked="False" Checked="SpeedBox_Checked" Unchecked="SpeedBox_Unchecked">
-                    <CheckBox.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform ScaleY="2" ScaleX="2"/>
-                            <SkewTransform/>
-                            <RotateTransform/>
-                            <TranslateTransform X="-170" Y="30"/>
-                        </TransformGroup>
-                    </CheckBox.RenderTransform>
-                </CheckBox>
-                <TextBlock Text="Speed Hack" Width="350" Height="29" FontFamily="Helvetica"  Foreground="White" FontWeight="Light" FontSize="24" RenderTransformOrigin="0.5,0.5"   >
-                    <TextBlock.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform/>
-                            <TranslateTransform Y="10" X="30"/>
-                        </TransformGroup>
-                    </TextBlock.RenderTransform></TextBlock>
-                <CheckBox x:Name="PSuperJumpCheckBox" Content="" RenderTransformOrigin="0.5,0.5" Width="16" IsChecked="False" Checked="SuperJumpBox_Checked" Unchecked="SuperJumpBox_Unchecked">
-                    <CheckBox.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform ScaleY="2" ScaleX="2"/>
-                            <SkewTransform/>
-                            <RotateTransform/>
-                            <TranslateTransform X="-170" Y="30"/>
-                        </TransformGroup>
-                    </CheckBox.RenderTransform>
-                </CheckBox>
-                <TextBlock Text="Possible Super Jump" Width="350" Height="29" FontFamily="Helvetica"  Foreground="White" FontWeight="Light" FontSize="24" RenderTransformOrigin="0.5,0.5"   >
-                    <TextBlock.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform/>
-                            <TranslateTransform Y="10" X="30"/>
-                        </TransformGroup>
-                    </TextBlock.RenderTransform></TextBlock>
+               
                
 
                 <Button Content="Save" Background="#FFA7A6A6" BorderBrush="Black" Name="SaveBtnU" Foreground="White" FontWeight="Light" FontFamily="Helvetica" Width="210" Height="17" RenderTransformOrigin="0.5,0.5" Click="SaveBtnU_Click">

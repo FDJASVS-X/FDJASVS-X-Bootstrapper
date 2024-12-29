@@ -44,8 +44,7 @@ namespace FDJASVS_X_Bootstrapper
             CircleCheckBox.IsChecked = Properties.Settings.Default.CircleCheckBoxSetting;
             OutlineCheckBox.IsChecked = Properties.Settings.Default.OutlineCheckBoxSetting;
             xrayCheckBox.IsChecked = Properties.Settings.Default.xrayCheckBoxSetting;
-            SpeedHackCheckBox.IsChecked = Properties.Settings.Default.SpeedHackCheckBoxSetting;
-            PSuperJumpCheckBox.IsChecked = Properties.Settings.Default.SuperJumpCheckBoxSetting;
+         
 
             
         }
@@ -192,31 +191,6 @@ namespace FDJASVS_X_Bootstrapper
             }
         }
 
-        private void SpeedBox_Checked(object sender, RoutedEventArgs e)
-        {
-           
-            SpeedHack = true;
-            Properties.Settings.Default.SpeedHackCheckBoxSetting = true;
-            Properties.Settings.Default.Save(); // Save the setting
-            if (Properties.Settings.Default.DevModeDebug)
-            {
-                MessageBox.Show("Set SpeedHackCheckBoxSetting Setting To " + Properties.Settings.Default.SpeedHackCheckBoxSetting, "Debugger", MessageBoxButton.OK, MessageBoxImage.Information);
-            }
-           
-        }
-
-        private void SpeedBox_Unchecked(object sender, RoutedEventArgs e)
-        {
-            
-            SpeedHack = false;
-            Properties.Settings.Default.SpeedHackCheckBoxSetting = false;
-            Properties.Settings.Default.Save(); // Save the setting
-            if (Properties.Settings.Default.DevModeDebug)
-            {
-                MessageBox.Show("Set SpeedHackCheckBoxSetting Setting To " + Properties.Settings.Default.SpeedHackCheckBoxSetting, "Debugger", MessageBoxButton.OK, MessageBoxImage.Information);
-            }
-        }
-
         private void SuperJumpBox_Checked(object sender, RoutedEventArgs e)
         {
            
@@ -301,18 +275,6 @@ namespace FDJASVS_X_Bootstrapper
                         await EmeraldGG.RemoveFlag("DFIntCullFactorPixelThresholdMainViewHighQuality");
                         await EmeraldGG.RemoveFlag("DFIntCullFactorPixelThresholdShadowMapHighQuality");
                         await EmeraldGG.RemoveFlag("DFIntCullFactorPixelThresholdShadowMapLowQuality");
-                    }
-
-                    if (Properties.Settings.Default.SpeedHackCheckBoxSetting == true)
-                    {
-                        if (!EmeraldGG.CheckExistsFlag("FFlagDebugSimIntegrationStabilityTesting"))
-                        {
-                            await EmeraldGG.AddFlag("FFlagDebugSimIntegrationStabilityTesting", "true");
-                        }
-                    }
-                    else
-                    {
-                        await EmeraldGG.RemoveFlag("FFlagDebugSimIntegrationStabilityTesting");
                     }
 
                     if (Properties.Settings.Default.SuperJumpCheckBoxSetting == true)

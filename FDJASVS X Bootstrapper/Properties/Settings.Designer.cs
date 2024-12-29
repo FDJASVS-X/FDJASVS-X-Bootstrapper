@@ -62,18 +62,6 @@ namespace FDJASVS_X_Bootstrapper.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool SpeedHackCheckBoxSetting {
-            get {
-                return ((bool)(this["SpeedHackCheckBoxSetting"]));
-            }
-            set {
-                this["SpeedHackCheckBoxSetting"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool SuperJumpCheckBoxSetting {
             get {
                 return ((bool)(this["SuperJumpCheckBoxSetting"]));
